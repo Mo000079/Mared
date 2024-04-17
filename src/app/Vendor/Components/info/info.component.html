@@ -1,0 +1,131 @@
+<section class="p-3 ">
+  <div class="container">
+    <div class="row">
+
+      <!-- Main content START -->
+
+
+      <!-- Personal info START -->
+      <div class="card border">
+        <!-- Card header -->
+        <div class="card-header border-bottom">
+          <h4 class="card-header-title">Personal Information</h4>
+        </div>
+
+        <!-- Card body START -->
+        <div class="card-body">
+          <!-- Form START -->
+          <form class="row g-3" [formGroup]="InfoForm" (ngSubmit)="saveChanges()">
+            <!-- Profile photo -->
+            <div class="col-12">
+              <label class="form-label p-2" style="color: var(--bs-gray-500);">Upload your profile photo<span
+                  class="text-danger">*</span></label>
+              <div class="d-flex align-items-center " style="justify-content: space-evenly  ;">
+                <img id="uploadfile-1-preview" class="w-25  border border-white border-3 shadow"
+                  alt="Vendor image" [src]="url">
+                <!-- Upload button -->
+                <label class="btn btn-sm mb-0 p-2 text-white" style="background-color: #1A936F !important;"
+                  for="uploadfile-1">
+                  <i class="fa-solid fa-plus"></i>
+                  Change Image</label>
+                <input id="uploadfile-1" class="form-control d-none btn btn-sm" #img type="file" (change)="Update(img)">
+              </div>
+            </div>
+
+            <!-- Name -->
+            <div class="col-md-6 mt-3">
+              <label class="form-label" style="color: var(--bs-gray-500);">Full Name<span
+                  class="text-danger">*</span></label>
+              <input type="text" class="form-control"  [(ngModel)]="UserName" formControlName="UserName"  placeholder="Enter your User Name">
+            </div>
+
+            <!-- Email -->
+            <div class="col-md-6 mt-3">
+              <label class="form-label" style="color: var(--bs-gray-500);">Email address<span
+                  class="text-danger">*</span></label>
+              <input type="email" class="form-control" formControlName="Email" [(ngModel)]="email" placeholder="Enter your email ">
+            </div>
+
+            <!-- Mobile -->
+            <div class="col-md-6 mt-4">
+              <label class="form-label" style="color: var(--bs-gray-500);">Mobile number<span
+                  class="text-danger">*</span></label>
+              <input type="text" class="form-control" [(ngModel)]="PhoneNo" formControlName="PhoneNumber" placeholder="Enter your Mobile Number">
+            </div>
+
+            <!-- Nationality -->
+            <!-- <div class="col-md-6 mt-3">
+                                  <label class="form-label" style="color: var(--bs-gray-500);">Country<span
+                                          class="text-danger">*</span></label>
+                                  <div class="dropdown">
+                                      <button class="btn dropdown-toggle"
+                                          style="background-color: #1A936F !important; color:white;" type="button"
+                                          data-bs-toggle="dropdown" aria-expanded="false">
+                                          Select Your Country
+                                      </button>
+                                      <ul class="dropdown-menu">
+                                          <li><a class="dropdown-item" href="#">Egypt</a></li>
+                                          <li><a class="dropdown-item" href="#">Saudi Arabia</a></li>
+                                          <li><a class="dropdown-item" href="#">USA</a></li>
+                                      </ul>
+                                  </div>
+                              </div> -->
+
+            <!-- Date of birth -->
+
+
+            <!-- Gender -->
+            <!-- <div class="col-md-6 mt-3 ps-3">
+              <label class="form-label mt-2" style="color: var(--bs-gray-500);">Select Gender<span
+                  class="text-danger">*</span></label>
+              <div class="d-flex gap-4">
+                <div class="form-check radio-bg-light">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                    checked="">
+                  <label class="form-check-label mt-2" style="color: var(--bs-gray-500);" for="flexRadioDefault1">
+                    Male
+                  </label>
+                </div>
+                <div class="form-check radio-bg-light">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                  <label class="form-check-label mt-2" style="color: var(--bs-gray-500);" for="flexRadioDefault2">
+                    Female
+                  </label>
+
+                </div>
+              </div>
+            </div> -->
+                    <div class="col-12 text-end mt-3">
+                      <button class="btn mb-0 text-white" type="submit" style="background-color: #1A936F">
+
+                        Update Info</button>
+                    </div>
+          </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!-- Form END -->
+        </div>
+        <!-- Card body END -->
+      </div>
+      <!-- Personal info END -->
+    </div>
+  </div>
+</section>

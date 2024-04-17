@@ -1,0 +1,61 @@
+<div class="container mt-5 ps-5">
+  <div class="d-flex flex-column flex-lg-row justify-content-between">
+    <div class="d-flex flex-column flex-lg-row justify-content-between m-0">
+
+      <form class="col-auto me-1 mb-5">
+        <div class="col-auto">
+          <input type="text" class="form-control" id="productsearch" placeholder="Search....">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <table class="table table-striped d-none d-lg-block" id="allProductTable" aria-describedby="allProductTable_info">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col me-3">Name</th>
+        <th scope="col">Image</th>
+        <th scope="col me-3">Category</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr *ngFor="let subCate of subCategories">
+        <td>
+          {{subCate.id}}
+        </td>
+        <td class="pe-5">{{subCate.name}}</td>
+        <td><img src="./../../../../assets/img/{{subCate.img}}" /></td>
+        <td>{{subCate.categoryName}}</td>
+        <td>
+          <div class="btn-box d-flex flex-row justify-content-between">
+            <div class="btn ms-1">
+
+              <button (click)="Delete(subCate.id)">
+                <i class="fa fa-trash"></i>
+              </button>
+
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <form class="mt-5" [formGroup]="subCateForm" (ngSubmit)="AddSubCate()">
+    <div class="mb-3">
+      <input type="text" placeholder="SubCategory Name" formControlName="Name" class="form-control"
+        aria-describedby="emailHelp">
+    </div>
+    <select class="form-select mb-5" formControlName="CategoryId" aria-label="Default select example">
+      <option selected>Select Category</option>
+      <option [ngValue]="cate.id" *ngFor="let cate of categories">{{cate.name}}</option>
+    </select>
+    <div class="mb-3">
+      <input type="file" class="form-control" #img (change)="uploadImg(img)">
+    </div>
+    <button type="submit" class="btn btn-success">Add</button>
+  </form>
+</div>

@@ -1,0 +1,12 @@
+* {
+  margin: 0px ;
+
+  font-family: sans-serif;
+  --primary-color: #021412;
+  --sec-color: #FFBB38;
+  --Third-color: #1A936F;
+
+}
+body{
+  height: 1000px;
+}

@@ -1,0 +1,118 @@
+<div>
+  <div class="offer pb-0 ps-2">
+    <div class="title d-flex justify-content-between align-items-center">
+      <h4>My Offer</h4>
+      <!-- <button class="btn create-offer-btn">Create New<i class="fa-solid fa-plus ps-1 fs-6"></i></button> -->
+    </div>
+  </div>
+  <div class="search">
+    <input type="text" placeholder="Search..." class="search-input my-5 ms-2 w-50 px-3 py-1" #search (keyup.enter)="Search(search)">
+
+  </div>
+  <div class="row m-0 mb-5 d-flex justify-content-start gap-2">
+    <div class="col-3 card" *ngFor="let prd of Products">
+      <img [src]="ApiImgUrl+prd.imagesUrl[0]" class="card-img-top"
+        alt="Fissure in Sandstone" />
+      <div class="card-body">
+        <h5 class="card-title">{{prd.name}}</h5>
+        <div class="card-text"><b>Price: </b>
+          <span class="price fs-5">{{prd.price}} £</span>
+        </div>
+        <a class="btn mt-3" (click)="AddtoOffer(prd.id)">Add To Offer </a>
+      </div>
+    </div>
+  </div>
+  <!--offer list component-->
+
+  <table class="table table-striped d-none d-lg-block " id="allProductTable" aria-describedby="allProductTable_info">
+    <thead class="table-light text-center">
+      <tr>
+        <th scope="col">
+        </th>
+        <th scope="col">Product Code</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Current Price</th>
+        <th scope="col">Offer Price</th>
+        <th scope="col">Count</th>
+        <th scope="col">Quantity</th>
+        <th scope="col p-4">Action</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr  *ngFor="let prd of PrdOfferList">
+        <td scope="row">
+        </td>
+        <td class=" px-3 py-1" >
+          #{{prd.id}}
+        </td>
+        <td class="text-center px-3 py-1"  >
+          <span *ngIf="isUpdate ==false">{{prd.name}} </span>
+          <span *ngIf="isUpdate ==true">{{prd.producTName}} </span>
+        </td>
+        <td class=" px-3 py-1"> {{prd.oldPrice}} £</td>
+        <td class="col px-3 py-1">
+          <div class="col-auto">
+            <input type="number" class="form-control" id="inputprice"  [value]="prd.oldPrice"  (change)="setPrice(prd.id,$event)" >
+          </div>
+        </td>
+        <td class="col px-3 py-1">
+          <div class="col-auto">
+            <input type="number" class="form-control" id="inputCount" value="1"  min="1" [max]="prd.oldQuantity" (change)="setCount(prd.id,$event)">
+          </div>
+        </td>
+        <td class="text-center  pl-4 py-1"> {{prd.quantity}} Unit </td>
+        <td class=" px-5 py-1">
+          <!-- cancel -->
+          <button class="btn btn-sm ms-1 bg-danger" (click)="RemoveFromOffer(prd.id)">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!--creat product component-->
+
+  <div class="row m-0 align-items-center">
+    <div class="col-6 upload-img text-center">
+      <label for="inputFile" class="w-75 upload-img-label">
+        <input type="file" class="input-file p-5" id="inputFile" #img (change)="upload(img)" hidden>
+        <div class="text-center p-4">
+          <i class="fa-solid fa-arrow-up-from-bracket fs-1 mb-3 text-secondary"></i>
+          <div>Drag And Drop Image<br>OR</div>
+          <span class="btn upload-img-btn mt-1">Browse</span>
+        </div>
+        <img class="offer-img" [src]="Url" alt="">
+      </label>
+    </div>
+    <div class="col-5 p-0">
+      <form  class="creat-offer-form w-100" (ngSubmit)="SubmitOffer()" [formGroup]="AddOfferForm">
+
+        <input type="text" class="form-control"  id="offerTitle" placeholder="Title"  formControlName="Title">
+        <div class="form-floating">
+          <textarea class="form-control h-100"  placeholder="Description" id="descTextarea" rows="5"
+            formControlName="Description" ></textarea>
+          <label for="descTextarea" class="desc text-secondary">Description</label>
+        </div>
+        <div class="price d-flex">
+          <input type="number" class="form-control" id="offerTitle" placeholder="Total Price" [value]="Discount" disabled>
+          <input type="number" class="form-control" id="offerTitle" placeholder="Total Quantity" [value]="TotalQuantity" disabled>
+        </div>
+        <div class="date d-flex">
+          <input type="text "  onmousedown="(this.type='datetime-local')" onmouseleave="(this.type='text')"
+          class="form-control text-secondary"  placeholder="Start Date & Time" formControlName="StartDate">
+          <input type="text "   onmousedown="(this.type='datetime-local')" onmouseleave="(this.type='text')"
+           class="form-control text-secondary"placeholder="Expiration Date & Time" formControlName="ExpirationDate">
+        </div>
+        <div class=" d-flex">
+          <!-- <input type="text"   class="form-control me-2" id="offercode" placeholder="Code " formControlName="Code" > -->
+          <input type="number"    min="1" class="form-control" id="offerlimit" placeholder="Limit "
+            formControlName="Limit">
+        </div>
+        <div>Customer will Earn <span class="bg-danger rounded p-2 text-light me-4">{{TotalEarnedPoints}}</span> points :)</div>
+        <button class="btn add-offer-btn px-3  mt-3 mb-5" type="submit" >Add</button>
+        <!-- <button class="btn add-offer-btn px-3 mt-3" type="button" *ngIf="isUpdate ==true" (click)="Update()">Save</button> -->
+
+      </form>
+    </div>
+  </div>
+</div>

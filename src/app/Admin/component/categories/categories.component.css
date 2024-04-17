@@ -1,0 +1,60 @@
+.h1 {
+  font-size: 1.8rem !important;
+}
+
+.product_img {
+  width: 70px;
+
+}
+
+.checked {
+  color: var(--sec-color);
+}
+
+.btn-box button {
+  all: unset;
+
+}
+
+.border-bottom {
+  border-bottom: 1px dotted gray !important;
+
+}
+
+.btn {
+  background-color: var(--Third-color);
+  color: rgb(253, 252, 252);
+}
+
+.details {
+  background-color: var(--sec-color);
+
+}
+
+.arrow {
+  background-color: white !important;
+  color: var(--Third-color) !important;
+  font-size: 20px;
+}
+
+.text-sec {
+  color: var(--sec-color);
+}
+
+.text-third {
+
+  color: var(--Third-color);
+
+}
+
+
+
+.success {
+  background-color: rgba(0, 128, 0, 0.344);
+}
+table img
+{
+  width: 5%;
+  border-radius: 50%;
+}
+

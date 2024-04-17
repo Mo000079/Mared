@@ -1,0 +1,31 @@
+
+      <!--images-->
+      <img [src]="ApiImgUrl+myOffer.mainImageUrl" class=" my-2 rounded h-100 w-100" alt="...">
+      <!-- <div class="rating  position-absolute top-0 mt-3 ms-2">
+          <div class="star">
+              <span class="fa fa-star checked"></span>{{myOffer.Rating}}
+          </div>
+      </div> -->
+      <div class="dropdown position-absolute top-0 end-0 mt-3 me-2 ">
+          <a class="btn dropdown-btn rounded-circle btn-sm px-2 py-1 text-black"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa fa-ellipsis-v"></i>
+          </a>
+
+          <ul class="dropdown-menu">
+              <li><a class="dropdown-item"  [routerLink]="['/user/offerdetails',myOffer.id]">Details</a></li>
+              <li><a class="dropdown-item"  routerLink="/user/checkout">Shop Now</a></li>
+          </ul>
+      </div>
+      <div class="row">
+          <div class="col-4" *ngFor="let prd of myOffer.offerDetailsViews">
+              <img [src]="ApiImgUrl+prd.productImageUrl" class="w-100 rounded " alt="...">
+          </div>
+      </div>
+      <!---->
+      <div class="card-body p-0 pb-2 mt-3  ">
+          <h5 class="card-title btn p-0 text-capitalize" [routerLink]="['/user/offerdetails',myOffer.id ]">{{myOffer.title}}</h5>
+          <div class="h6 price"><span class="sele text-decoration-line-through text-danger">{{myOffer.totalPrice}} £</span>
+             {{myOffer.discount}} £</div>
+          <!--button-->
+      </div>

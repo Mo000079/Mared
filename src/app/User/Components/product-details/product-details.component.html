@@ -1,0 +1,126 @@
+<div class="p-0 m-0" *ngIf="isFound">
+<!-- start product details -->
+<section class="product-details pt-5 mb-5 pb-4 bg-white">
+  <div class="container">
+    <div class="row pb-5">
+
+      <div class="col-xl-5 col-lg-5 col-md-6 p-0 col-sm-12">
+
+        <div class="item-img">
+          <img src="https://localhost:7104/Images/{{product.imagesUrl[0]}}" alt="">
+        </div>
+
+      </div>
+
+      <div class="col-xl-6 offset-1 col-lg-5 col-md-5 m-sm-auto ps-sm-5 pe-sm-5 col-12 ms-0 pt-0 mt-sm-0">
+        <div class="detail-content bg-white ">
+          <h5 class="pt-3 pb-1">{{product.name}}</h5>
+
+          <span><i class="fa-solid fa-star" [style.color]="product.rate > 0?'orange':'gray'"></i></span>
+          <span *ngIf="product.rate > 0">{{product.rate}}</span>
+          <br>
+          <div class="pt-4">
+<!-- <span class="text-decoration-line-through text-danger pe-2">{{product.price -5}} £</span> -->
+<span class="fw-bold">{{product.price}} £</span>
+          </div>
+
+          <p>{{product.description}}</p>
+          <div class="mb-5">
+            <div class="d-flex align-items-center">
+              <input type="number" min="1" #val value="1" class="amount">
+              <button (click)="Fav()" class="mx-1"><i class="fa fa-heart" [style.color]="isFav?'red':'gray'"></i></button>
+              <button class="add-to-cart text-white" (click)="addtoCart(product.id ,val)">Add To Cart</button>
+            </div>
+
+          </div>
+          <span class="d-block mb-3"><b>Category: </b><span class="text-secondary">{{product.categoryName}} | {{product.subCategoryName}}</span></span>
+          <span class="d-block mb-3"><b>Brand Name: </b><span class="text-secondary">{{product.brandName}}</span></span>
+          <!-- <span>Share This <i class="fa-brands fa-facebook ms-2"></i> <i class="fa-brands fa-pinterest"></i> <i
+              class="fa-brands fa-twitter"></i> <i class="fa-brands fa-instagram"></i></span> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- end product details -->
+<!-- start more info section -->
+<section class="more-info">
+  <ul class="container d-flex list-unstyled pb-3 h6">
+    <li class="review-btn me-5">
+      <button id="reviweLink" (click)="getReviewSide()">Reviews</button>
+      <span class="botm_brdr" [style.width]="!isReview? '0px':'90px'"></span>
+
+    </li>
+    <li class="review-btn">
+      <button id="selarLink" (click)="getSellarInfo()">Seller Info</button>
+      <span class="botm_brdr" [style.width]="!isSellarInfo? '0px':'105px'"></span>
+    </li>
+
+  </ul>
+  <div class="reviews" id="reviews" *ngIf="isReview">
+    <div class="container bg-white p-5 mt-5">
+      <div class="review" *ngFor="let rev of review">
+        <div class="d-flex justify-content-between">
+          <div>
+            <img src="./../../../assets/img/OIP.jpg" width="10%" alt="">
+            <span class="ms-2">{{rev.userName}}</span>
+          </div>
+          <div class="rate">
+            <span><i class="fa-solid fa-star" [style.color]="rev.value >0?'orange':'white'"></i></span>
+            <span> {{rev.value}} </span>
+          </div>
+        </div>
+        <p class="text-secondary ms-5 ps-4">{{rev.message}}</p>
+      </div>
+        <app-u-empty [visible]="review.length <= 0 || review == null" [notFoundText]="'No reviews yet'"></app-u-empty>
+    </div>
+
+  </div>
+
+  <div class="sellar-info mt-5 mb-5" id="selarInfo" *ngIf="isSellarInfo">
+    <div class="container">
+      <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-start align-items-sm-center mb-sm-0 mb-3">
+          <div class="sellar-img me-3">
+            <img src="https://localhost:7104/Images/{{product.vendorImg}}" width="100%" alt="">
+          </div>
+          <div>
+            <div>{{product.vendorName}}</div>
+          </div>
+
+        </div>
+        <div class="pe-5">
+          <span><b>Shop Name:</b> {{product.shopName}}</span>
+
+          <br>
+              <span><b>Products:</b> {{product.productList}}</span>
+          <br>
+          <span><b>Location:</b> {{product.location}}</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end more info section -->
+<!-- start related-products section -->
+<section class="related-products pt-5 mb-5" *ngIf="similarProduct.length > 0">
+  <div class="container">
+    <h4>Similar Products</h4>
+    <div class="row bg-white justify-content-center p-3">
+      <app-product-card class="col-12 col-sm-6 col-md-3 position-relative mt-2 " [product]="item"
+        *ngFor="let item of similarProduct"></app-product-card>
+
+      </div>
+
+
+
+
+  </div>
+</section>
+<!-- end related-products section -->
+</div>
+<div class="container pt-5">
+<app-u-empty [visible]="!isFound" [notFoundText]="'This product does not exist'"></app-u-empty>
+</div>

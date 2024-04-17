@@ -1,0 +1,61 @@
+<section class="gradient-form">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center m-0">
+      <div class="col-xl-10 cards">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0 m-0 lgn-card">
+            <div class="col-lg-6 lgnForm">
+              <div class="card-body p-md-5 m-0">
+
+
+                <form (ngSubmit)="SubmitLoginForm(loginForm)" [formGroup]="loginForm">
+                  <h5>Please login to your account</h5>
+
+                  <div class="form-outline mb-4">
+                    <input formControlName ="UserName" type="text" id="form2Example11" class="form-control mt-4"
+                      placeholder="Enter Your Email or UserName"/>
+                  </div>
+                  <div  *ngIf="loginForm.get('UserName')?.errors && loginForm.get('UserName')?.touched" class="alert alert-danger py-0">
+                    <p class="m-0" *ngIf="loginForm.get('UserName')?.getError('minlength')">User name not correct </p>
+                    <p class="m-0" *ngIf="loginForm.get('UserName')?.getError('required')">User name is required</p>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input formControlName ="Password" type="password" id="form2Example22" class="form-control" placeholder="Your Password"/>
+                  </div>
+                  <div  *ngIf="loginForm.get('Password')?.errors && loginForm.get('Password')?.touched" class="alert alert-danger py-0">
+                    <p class="m-0" *ngIf="loginForm.get('Password')?.getError('minLength')">Min Length is 8 </p>
+                    <p class="m-0" *ngIf="loginForm.get('Password')?.getError('required')">Password is required</p>
+                  </div>
+
+
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <button class="btn text-light fa-lg mb-3 logn-btn me-4" type="submit">
+                      Log in
+                    </button>
+                    <a class="text-muted" href="#!">Forgot password?</a>
+                  </div>
+
+                  <div class="d-flex align-items-center justify-content-center pb-4">
+                    <small class="mb-0">Don't have an account?</small>
+                    <a routerLink="/register"><button class="btn text-light create-account-btn ms-4">Create New</button></a>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-baseline gradient-custom-2">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4 mt-5 content">
+                <h4 class="mb-4 fs-3">M<span><img src="./../../assets/img/icon.png" class="form-logo" alt=""><span
+                      class="redLetr">RED</span></span></h4>
+                <p class="fs-4">Welcome, We are glad to see you again!</p>
+              </div>
+              <div class="lyr"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

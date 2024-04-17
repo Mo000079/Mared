@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+  margin: 0;
+  padding: 0;
+  --bg2-color: #fff;
+  --primary-color: #021412;
+  --sec-color: #FFBB38;
+  --Third-color: #1A936F;
+  --bg-color: #f8f8f8;
+  --line-bg: #e8e8e8;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-color);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  /* background-color: #1A936F; */
+}
+
+button {
+  all: unset;
+}
+
+.item-img {
+  width: 100%;
+  padding: 1.5rem;
+  border-right: 1px solid var(--line-bg);
+
+}
+
+.item-img img {
+  width: 90%;
+}
+
+.detail-content h5 {
+  padding-bottom: 1rem;
+}
+
+.rate {
+  float: left;
+  height: 20px;
+}
+
+.rate:not(:checked)>input {
+  position: absolute;
+  top: -9999px;
+}
+
+.rate:not(:checked)>label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 26px;
+  color: #ccc;
+}
+
+.rate:not(:checked)>label:before {
+  content: '★ ';
+}
+
+.rate>input:checked~label {
+  color: #ffc700;
+}
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
+  color: #deb217;
+}
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
+  color: #c59b08;
+}
+
+.detail-content p {
+  /* 30px */
+  padding: 1.875rem 0;
+  color: rgb(108, 108, 108);
+}
+
+.amount {
+  outline: none;
+  padding: .5rem;
+  width: 23%;
+  border: none;
+  border: 1px solid var(--line-bg);
+}
+
+.fa-heart {
+  font-size: 1.8rem;
+  color: var(--line-bg);
+  cursor: pointer;
+}
+
+.add-to-cart {
+  padding: .5rem 1.875rem;
+  border: 1px solid var(--line-bg);
+  width: 100%;
+  background-color: var(--Third-color);
+  color: var(--bg-color);
+  transition: all .3s ease;
+}
+.add-to-cart:hover{
+  cursor: pointer;
+  opacity:.9;
+}
+
+span i.fa-brands {
+  margin-right: .5rem;
+  cursor: pointer;
+}
+.review-btn{
+  /* background-color: #c59b08; */
+  position: relative;
+}
+.botm_brdr{
+  position: absolute;
+  bottom: -87%;
+  left: -4%;
+  width: 0px;
+  height: 100px;
+  border-bottom: 2.5px solid var(--sec-color);
+  transition: all .5s ease;
+}
+
+.reviews {
+  display: block;
+}
+
+.review {
+  padding-bottom: 4rem;
+  /* margin-bottom: 2rem;
+    border-bottom: 1px solid var(--line-bg); */
+}
+
+.more-info ul:first-child li {
+  cursor: pointer;
+}
+
+.more-info ul:first-child {
+  border-bottom: 1px solid var(--line-bg);
+}
+
+.sellar-img {
+  width: 10%;
+}
+
+.similar-item {
+  box-shadow: 1px 1px 0px var(--line-bg), inset 1px 1px 0px var(--line-bg), inset 0px 0px 0px var(--line-bg);
+  padding: 0 1rem;
+  margin: 0 1rem;
+}
+
+.similar-img {}
+
+.similar-img img {
+  width: 100%;
+}
+
+@media screen and (max-width:767px) {
+  .item-img {
+    /* background-color: #1A936F; */
+    width: 80%;
+    margin: auto;
+    margin-top: 1.5rem;
+    /* padding: 1.5rem; */
+    border: none;
+    border-bottom: 1px solid var(--line-bg);
+  }
+}
+
+@media screen and (max-width:320px) {
+
+  .product-details {
+    width: 100%;
+  }
+
+  .detail-content {
+    width: 100%;
+    margin: 0;
+    padding: 0 .5rem;
+  }
+
+  .product-details .offset-1 {
+    padding: 0 0 .5rem 0;
+  }
+
+  .similar-item {
+    margin-bottom: 1rem;
+  }
+
+  .container {
+    margin: 0;
+    width: 100%;
+  }
+
+  .sellar-info .d-flex:first-child {
+    flex-direction: column;
+    padding-left: .5rem;
+  }
+
+  .sellar-img {
+    width: 30%;
+  }
+
+  .product-details .row:first-child {
+    margin: 0;
+  }
+
+  .related-products .row:first-child {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .detail-content button {
+    width: 70%;
+  }
+
+  .more-info {
+    padding: .5rem;
+  }
+}
+select {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #fff;
+  font-size: 16px;
+}
+
+.fa-solid {
+  color: orange;
+}
+
+.my-pagination ::ng-deep .ngx-pagination .current {
+  background: var(--sec-color);
+  border-radius: 50px;
+
+}

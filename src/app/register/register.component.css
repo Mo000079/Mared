@@ -1,0 +1,127 @@
+.gradient-custom-2 {
+  position: absolute;
+top: 0;
+right: 0;
+  /* position: relative; */
+  /* background-image: url(./../../assets/img/login-bg-7.jpg);
+  background-size: cover;
+  max-height: 717.778px; */
+  /* background-position: bottom left; */
+}
+
+.gradient-custom-2 .lyr {
+width: 522px;
+  height: 1001px;
+  background-color: var(--Third-color);
+  opacity: .9;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.gradient-custom-2 .content {
+  position: relative;
+  z-index: 1111;
+}
+        .gradient-custom-2 .content span {
+          color: var(--sec-color);
+        }
+.gradient-form {
+  height: 100vh;
+}
+
+.cards {
+  height: 100vh;
+}
+
+.register-btn {
+  padding: 20px 15px;
+  background-color: var(--Third-color);
+}
+
+.container .row {
+  height: 100vh;
+}
+
+/* .gender{
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.1;
+
+} */
+.login-link{
+  text-decoration: none;
+  color: var(--Third-color);
+}
+
+.login-reg-btn
+{
+
+    color: white;
+}
+.btn-sec
+{
+    background-color: var(--sec-color);
+}
+.reg-card{
+  padding-bottom: 50rem;
+    position: relative;
+    background-image: url(./../../assets/img/login-bg-7.jpg);
+      background-size: cover;
+
+      background-position: bottom left;
+}
+.regs-form{
+position: absolute;
+  width: 521px;
+  height: 1001px;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+
+}
+.form-logo{
+  width: 15%;
+  position: relative;
+  right:9px;
+}
+.redLetr{
+  position: relative;
+  right: 20px;
+}
+@media screen and (min-width:1647px){
+  .regs-form{
+    width: 520px;
+  }
+}
+@media screen and (max-width:1399px){
+  .regs-form{
+        width: 463px;
+  }
+    .gradient-custom-2 .lyr{
+      width: 431px;
+    }
+
+}
+@media screen and (max-width:435px) {
+  .regs-form {
+    width: 100%;
+    background-color: #fff;
+  }
+
+  .gradient-custom-2 .lyr {
+    width: 0;
+    display: none;
+  }
+    .reg-card{
+      background-color: #fff;
+    }
+        .gradient-custom-2{
+          display: none;
+        }
+        .content{
+          display: none;
+        }
+
+}
+

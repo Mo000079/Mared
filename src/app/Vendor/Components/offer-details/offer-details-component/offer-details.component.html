@@ -1,0 +1,263 @@
+<section class="offer-details pt-5 mb-5 pb-4 bg-white">
+  <div class="container">
+    <p class="lead" style="color: #c5c5c5;">You Reviewing Your Offer Details as Customer</p>
+    <div class="row align-items-center">
+      <div class="col-xl-5 col-lg-5 col-md-6 p-0 col-sm-12">
+        <div id="productimages" class="carousel  slide">
+          <div class="carousel-indicators my-5">
+            <input type="image" class="border-circle active" [src]="ApiImgUrl+myOffer.mainImageUrl" style="width: 100px;height: 100px;" data-bs-target="#productimages" data-bs-slide-to="0" aria-current="true" >
+            <input type="image" class="border " *ngFor="let img of myOffer.offerDetailsViews" [src]="ApiImgUrl+img.productImageUrl" style="width: 100px;height: 100px;" data-bs-target="#productimages" data-bs-slide-to="1" aria-current="true" >
+
+          </div>
+          <div class="carousel-inner mb-5">
+            <div class="carousel-item active">
+              <img [src]="ApiImgUrl+myOffer.mainImageUrl" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" *ngFor="let item of myOffer.offerDetailsViews">
+              <img [src]="ApiImgUrl+item.productImageUrl" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <div class="carsl-btn d-flex justify-content-between p-3">
+        <button class="carousel-control-prev " type="button" data-bs-target="#productimages" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#productimages" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-xl-6 offset-1 col-lg-5 col-md-5 m-sm-auto ps-sm-5 pe-sm-5 col-12 ms-0">
+        <div class="detail-content bg-white ">
+          <h5 class="mt-md-5 text-capitalize">{{myOffer.title}}</h5>
+         <span class="text-decoration-line-through text-danger me-1">{{myOffer.totalPrice | currency}}</span>
+          <span class="fw-bold">{{myOffer.discount| currency}}</span>
+          <p class="pb-0">{{myOffer.description}}</p>
+
+          <div class="mb-5">
+            <div class="d-flex align-items-center">
+              <input type="number" min="1" value="1" class="amount">
+              <button class="shop-now text-light disabled ms-2">Shop Now</button>
+            </div>
+
+          </div>
+          <p class="end-date"><span class="arrow me-2"><i class='fa fa-arrow-right'></i></span> <span class="text-black"><span class="h6">End Date :</span> {{myOffer.expirationDate}}</span></p>
+          <span class="d-block mb-3 "><b>Quentity: </b><span class="text-secondary">{{myOffer.totalQuantity}}</span></span>
+          <span class="d-block mb-3 "><b>Limit: </b><span class="text-secondary">{{myOffer.limit}}</span></span>
+          <span>Share This <i class="fa-brands fa-facebook ms-2"></i> <i class="fa-brands fa-pinterest"></i>
+            <i class="fa-brands fa-twitter"></i> <i class="fa-brands fa-instagram"></i></span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+<section class="more-info mb-5">
+  <ul class="container d-flex list-unstyled pb-3 h6">
+    <li class="review-btn me-3">
+      <button (click)="getProductsSide()">Offer Products</button>
+      <span class="botm_brdr" [style.width]="!isProducts? '0px':'153px'"></span>
+    </li>
+    <li class="review-btn me-3">
+      <button  (click)="getRelatedOfferSide()">Related Offers</button>
+      <span class="botm_brdr" [style.width]="!isRelated? '0px':'128px'"></span>
+    </li>
+        <li class="review-btn me-3">
+          <button (click)="getSellarInfo()">Seller Info</button>
+          <span class="botm_brdr" [style.width]="!isSellarInfo? '0px':'100px'"></span>
+        </li>
+  </ul>
+  <div class="reviews" *ngIf="isProducts">
+    <div class="container bg-white p-5 mt-5">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prod of myOffer.offerDetailsViews">
+            <td>{{prod.productName}}</td>
+            <td>{{prod.productPrice}}</td>
+            <td>{{prod.count}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- </div> -->
+  <div class="sellar-info mt-5 mb-5" *ngIf="isSellarInfo">
+    <div class="container">
+      <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-start align-items-sm-center mb-sm-0 mb-3">
+          <div class="sellar-img me-3 w-25">
+            <img src="https://localhost:7104/Images/{{myOffer.vendorImg}}" width="100%" alt="">
+          </div>
+
+          <div>
+            <div>{{myOffer.vendorName}}</div>
+          </div>
+
+          </div>
+          <div class="pe-5">
+            <span><b>Shop Name:</b> {{myOffer.shopName}}</span>
+
+            <br>
+            <!-- <span><b>Products:</b> {{product.productList}}</span> -->
+            <!-- <br> -->
+            <span><b>Location:</b> {{myOffer.shopLocation}}</span>
+
+          </div>
+
+
+      </div>
+    </div>
+  </div>
+    <div id="Related-Offers" *ngIf="isRelated">
+      <div class="card card-body">
+        <div class="row p-3 cards">
+          <div class="col-12 col-sm-6 col-md-3 mb-2  me-3 card position-relative" style="width: 15rem;"
+            *ngFor="let item of relatedOffers">
+            <img [src]="ApiImgUrl+item.mainImageUrl" class=" my-2 rounded h-100 w-100" alt="...">
+            <div class="dropdown position-absolute top-0 end-0 mt-3 me-2 ">
+              <a class="btn dropdown-btn rounded-circle btn-sm px-2 py-1 text-black" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="fa fa-ellipsis-v"></i>
+              </a>
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" [routerLink]="['/vendor/offerdetails', item.id]"
+                    routerLinkActive="router-link-active">Details</a></li>
+                <li><a class="dropdown-item">Shop Now</a></li>
+              </ul>
+            </div>
+            <div class="row">
+              <div class="col-4" *ngFor="let p of item.offerDetailsViews ">
+                <img [src]="ApiImgUrl+p.productImageUrl" class="w-100 rounded " alt="...">
+              </div>
+
+            </div>
+
+            <div class="card-body p-0 pb-2 mt-3  ">
+              <h5 class="card-title">{{item.title}}</h5>
+              <div class="h6 price"><span class="sele text-decoration-line-through text-danger">{{item.totalPrice |
+                  currency}}</span>
+                {{item.discount | currency}}</div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+</section>
+
+
+
+
+
+<!--reviews  & vendor info-->
+<!-- <section class="more-info mb-4">
+  <p class="  ms-3 pb-3 h6 ">
+    <button class="btn btn-primary me-3" type="button" data-bs-toggle="collapse" data-bs-target="#seller-info"
+      aria-expanded="false" aria-controls="seller-info">
+      <div class="h5">Offer Products</div>
+    </button>
+      <button class="btn btn-primary me-3" type="button" data-bs-toggle="collapse" data-bs-target="#seller-info"
+          aria-expanded="false" aria-controls="seller-info">
+          <div class="h5">Your Info</div>
+      </button>
+
+      <button class="btn btn-primary me-1" type="button" data-bs-toggle="collapse" data-bs-target="#Related-Offers"
+          aria-expanded="false" aria-controls="seller-info">
+          <div class="h5">Related Offers</div>
+      </button>
+
+  </p>
+  <div class="collapse" id="seller-info">
+      <div class="card card-body">
+          <div class="sellar-info mt-5 mb-5" id="">
+              <div class="container">
+                  <div class="d-flex">
+                      <div class="d-flex justify-content-start align-items-sm-center mb-sm-0 mb-3">
+                          <div class="sellar-img me-3">
+                              <img src="./../../../assets/img/OIP.jpg" width="100%" alt="">
+                          </div>
+                          <div>
+                              <div>Ridoy Rock</div>
+                              <div class="rate">
+                                  <input type="radio" id="star5" name="rate" value="5" />
+                                  <label for="star5" title="text">5 stars</label>
+                                  <input type="radio" id="star4" name="rate" value="4" />
+                                  <label for="star4" title="text">4 stars</label>
+                                  <input type="radio" id="star3" name="rate" value="3" />
+                                  <label for="star3" title="text">3 stars</label>
+                                  <input type="radio" id="star2" name="rate" value="2" />
+                                  <label for="star2" title="text">2 stars</label>
+                                  <input type="radio" id="star1" name="rate" value="1" />
+                                  <label for="star1" title="text">1 star</label>
+                              </div>
+                          </div>
+
+                      </div>
+                      <div>
+                          <span><b>Products:</b> 120</span>
+                          <br>
+                          <span><b>Categries:</b> Food & Drinks</span>
+                          <br>
+                          <span><b>Location:</b>Elredwan, Aswan</span>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="collapse" id="Related-Offers">
+      <div class="card card-body">
+              <div class="row   p-3 cards">
+                  <div class="col-12 col-sm-6 col-md-3 mb-2  me-3 card position-relative" style="width: 15rem;"
+                      *ngFor="let item of Offers">
+                      <img [src]="ApiImgUrl+item.mainImageUrl" class=" my-2 rounded h-100 w-100" alt="...">
+                      <div class="dropdown position-absolute top-0 end-0 mt-3 me-2 ">
+                          <a class="btn dropdown-btn rounded-circle btn-sm px-2 py-1 text-black"  role="button"
+                              data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="fa fa-ellipsis-v"></i>
+                          </a>
+
+                          <ul class="dropdown-menu">
+                              <li><a class="dropdown-item"  [routerLink]="['/vendor/offerdetails', item.id]" routerLinkActive="router-link-active"  >Details</a></li>
+                              <li><a class="dropdown-item" >Shop Now</a></li>
+                          </ul>
+                      </div>
+                      <div class="row">
+                          <div class="col-4" *ngFor="let p of item.offerDetailsViews ">
+                              <img [src]="ApiImgUrl+p.productImageUrl" class="w-100 rounded " alt="...">
+                          </div>
+
+                      </div>
+
+                      <div class="card-body p-0 pb-2 mt-3  ">
+                          <h5 class="card-title">{{item.title}}</h5>
+                          <div class="h6 price"><span class="sele text-decoration-line-through text-danger">{{item.totalPrice |
+                                  currency}}</span>
+                              {{item.discount | currency}}</div>
+
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+  </div>
+
+</section> -->

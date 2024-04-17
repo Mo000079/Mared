@@ -1,0 +1,61 @@
+* {
+  margin: 0px;
+  padding: 0px;
+ /* font-family: sans-serif;*/
+  --primary-color: #021412;
+  --sec-color: #FFBB38;
+  --Third-color: #1A936F;
+}
+
+
+/*Start PaymentMethod Page */
+.paymentMethodPage {
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  width: 90%;
+}
+
+.bank {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.bank img {
+  width: 15%;
+  border-radius: 50%;
+}
+
+.bankDetails {
+  line-height: 2.2em;
+  color: var(--primary-color);
+}
+
+.bankDetails span {
+  color: var(--Third-color);
+  font-size: larger;
+}
+
+.paymentMethodPage button {
+  padding: 10px;
+  width: 15%;
+  background-color: var(--sec-color);
+  color: var(--primary-color);
+  border: none;
+  /*font-size: larger;*/
+}
+
+.paymentMethodPage button:hover {
+  cursor: pointer;
+}
+
+.paymentMethodPage hr {
+  margin: 0 auto;
+  width: 80%;
+  color: #f8f8f8;
+}
+
+/*End PaymentMethod Page */

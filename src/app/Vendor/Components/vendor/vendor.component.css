@@ -1,0 +1,19 @@
+.dash-header .user-img {
+  width: 30%;
+
+}
+
+.dash-header .user-img img {
+  width: 17%;
+  border-radius: 1rem;
+}
+.col-11
+{
+  transition: all 1s ease;
+}
+.user
+{
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}

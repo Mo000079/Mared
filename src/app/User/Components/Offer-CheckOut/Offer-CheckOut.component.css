@@ -1,0 +1,80 @@
+
+.h1{
+    font-size: 1.7rem !important;
+}
+.h3{
+    font-size: 1.38rem !important;
+}
+.h4{
+    font-size: 1.20rem !important;
+}
+.h6{
+    font-size: 1rem !important;
+}
+input{
+    font-size: medium;
+}
+.head10  {
+    height: 17vh;
+    color: var(--Third-color);
+}
+
+.order-summary {
+    background-color: white;
+    height: 50%;
+}
+
+.btn1 {
+    background-color: var(--sec-color);
+    color:var(--primary-color);
+}
+.btn1:hover{
+    background-color: #f8f8f8;
+    color: var(--sec-color);
+}
+
+/* billing-details */
+.billing-details {
+    margin-left: 2%;
+}
+
+.dropdown-menu {
+    width: 30% !important;
+
+}
+
+.form-select {
+    width: 50% !important;
+}
+.bg-wight
+{
+    background-color: white;
+}
+.order
+{
+    align-items: center;
+    width: 50%;
+    position: relative;
+    left: 150px;
+    border-radius: 10px;
+    position: relative;
+    top: -50px;
+}
+.bg-sec-color
+{
+    background-color: var(--sec-color);
+    color: white;
+}
+.text-sec-color
+{
+    /* color: var(--primary-color); */
+    color: var(--Third-color);
+}
+::marker
+{
+    color: var(--Third-color);
+}
+.price{
+    list-style: none;
+}
+

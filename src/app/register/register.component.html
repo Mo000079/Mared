@@ -1,0 +1,134 @@
+<section class="gradient-form">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center m-0">
+      <div class="col-xl-10 cards">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0 m-0 reg-card">
+            <div class="col-lg-6 regs-form">
+              <div class="card-body px-md-5 pt-md-3 pb-0 m-0">
+                <div class="py-3">Already a member?<a class="login-link" routerLink="/login"> Login</a></div>
+                <form (ngSubmit)="SubmitRegisterForm()" [formGroup]="registerForm">
+
+
+                  <div class="form-outline mb-4 pt-3">
+                    <input formControlName="UserName" type="text" id="UserName" class="form-control"
+                      placeholder="Your UserName" />
+                  </div>
+                  <div *ngIf="registerForm.get('UserName')?.errors && registerForm.get('UserName')?.touched"
+                    class="alert alert-danger py-0">
+                    <p class="m-0" *ngIf="registerForm.get('UserName')?.getError('maxLength')">Invalid UserName </p>
+                    <p class="m-0" *ngIf="registerForm.get('UserName')?.getError('minLength')">Too short UserName</p>
+                    <p class="m-0" *ngIf="registerForm.get('UserName')?.getError('required')">UserName is required</p>
+                  </div>
+
+
+                  <div class="form-outline mb-4">
+                    <input formControlName="PhoneNumber" type="text" id="phone" class="form-control"
+                      placeholder="Your Phone" />
+                  </div>
+                  <div *ngIf="registerForm.get('PhoneNumber')?.errors && registerForm.get('PhoneNumber')?.touched"
+                    class="alert alert-danger py-0">
+                    <p class="m-0" *ngIf="registerForm.get('PhoneNumber')?.getError('max')">Invalid Phone </p>
+                    <p class="m-0" *ngIf="registerForm.get('PhoneNumber')?.getError('min')">Too short Phone</p>
+                    <p class="m-0" *ngIf="registerForm.get('PhoneNumber')?.getError('required')">Phone is required</p>
+                  </div>
+
+
+
+                  <div class="form-outline mb-4">
+                    <input formControlName="NationalId" type="text" id="nId" class="form-control"
+                      placeholder="Your NationalID" />
+                  </div>
+                  <div *ngIf="registerForm.get('NationalId')?.errors && registerForm.get('NationalId')?.touched"
+                    class="alert alert-danger py-0">
+                    <p class="m-0" *ngIf="registerForm.get('NationalId')?.getError('min')">Too short NationalID</p>
+                    <p class="m-0" *ngIf="registerForm.get('NationalId')?.getError('required')">NationalID is required
+                    </p>
+                  </div>
+
+
+                  <div class="form-outline mb-4">
+                    <input formControlName="Email" type="email" id="email" class="form-control"
+                      placeholder="Your Email" />
+                  </div>
+                  <div *ngIf="registerForm.get('Email')?.errors && registerForm.get('Email')?.touched"
+                    class="alert alert-danger py-0">
+                    <p class="m-0" *ngIf="registerForm.get('Email')?.getError('Email')">Email not correct </p>
+                    <p class="m-0" *ngIf="registerForm.get('Email')?.getError('required')">Email is required</p>
+                  </div>
+
+
+                  <div class="form-outline mb-4">
+                    <label for="female" class="pe-2">Female</label>
+                    <input type="radio" id="female" name="gender" class="gender me-3" value="2"
+                      formControlName="Gender" />
+                    <label for="male" class="pe-2">Male</label>
+                    <input type="radio" id="male" name="gender" class="gender" value="1" formControlName="Gender" />
+                  </div>
+                  <!-- Gender Validation Not Work  -->
+                  <!-- <div  *ngIf="registerForm.get('Gender')?.errors" class="alert alert-danger py-0">
+                    <p class="m-0" *ngIf="registerForm.get('Gender')?.getError('required')">Gender is required</p>
+                  </div> -->
+
+
+                  <!-- <select class="form-select mb-4" aria-label="Default select example">
+                    <option selected>Role</option>
+                    <option value="vendor">Vendor</option>
+                    <option value="customer">Customer</option>
+                  </select> -->
+
+                  <div class="form-outline mb-4">
+                    <input formControlName="Password" type="password" id="pass" class="form-control"
+                      placeholder="Your Password" />
+                  </div>
+                  <div *ngIf="registerForm.get('Password')?.errors && registerForm.get('Password')?.touched"
+                    class="alert alert-danger py-0">
+                    <p class="m-0" *ngIf="registerForm.get('Password')?.getError('minlength')">Short Password</p>
+                    <p class="m-0" *ngIf="registerForm.get('Password')?.getError('required')">Password is required</p>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password" id="pass" class="form-control" placeholder="Confirm Password"
+                      formControlName="ConfirmPassword" />
+                  </div>
+                  <div
+                    *ngIf="registerForm.get('ConfirmPassword')?.errors && registerForm.get('ConfirmPassword')?.touched"
+                    class="alert alert-danger py-0">
+                    <p class="m-0" *ngIf="registerForm.get('ConfirmPassword')?.getError('minlength')">Short Password</p>
+                    <p class="m-0" *ngIf="registerForm.get('ConfirmPassword')?.getError('required')">Password is
+                      required</p>
+                  </div>
+
+
+                  <div class="text-center pt-1 pb-1">
+                    <button [disabled]="registerForm.invalid" class="btn text-light fa-lg mb-3 register-btn me-4"
+                      type="submit" id="submit" value="Submit">Submit</button>
+                    <!-- <div class="text-center pt-1 mb-5 pb-1">
+                      <input [disabled]="registerForm.invalid"
+                        class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 logn-btn me-4" type="submit"
+                        id="submit" value="Submit" />
+                    </div> -->
+
+
+
+                  </div>
+                </form>
+              </div>
+
+
+            </div>
+            <div class="col-lg-6  d-flex align-items-baseline gradient-custom-2">
+              <div class="text-white px-3 p-md-3 mx-md-4 mt-5 content">
+                <h4 class="mb-4 fs-3">M<span><img src="./../../assets/img/icon.png" class="form-logo" alt=""><span class="redLetr">RED</span></span></h4>
+                <p class="fs-4">Welcome, Looks like you're new here!</p>
+                <button type="button" class="btn login-reg-btn" #rolebtn (click)="addrole(rolebtn)">Want to Bacome a
+                  Saller</button>
+              </div>
+              <div class="lyr"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

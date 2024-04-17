@@ -1,0 +1,7 @@
+.price{
+  color: var(--Third-color);
+}
+.btn{
+  background-color: var(--Third-color);
+  color: white;
+}

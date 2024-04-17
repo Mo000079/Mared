@@ -1,0 +1,43 @@
+.offer{
+  color: var(--primary-color);
+}
+.create-offer-btn{
+  background-color: var(--sec-color);
+}
+.search-input{
+  border: 1px solid var(--line-color);
+  border-radius: 1rem;
+  outline: none;
+}
+.upload-img-label{
+  position: relative;
+  border: .3rem dashed var(--line-color);
+  border-radius: 1rem;
+}
+.upload-img-btn{
+  background-color: var(--sec-color);
+  width: 49%;
+}
+.creat-offer-form input,.form-floating{
+  margin-bottom: 1rem;
+}
+.price,.date,.time{
+  gap: 13px;
+}
+.add-offer-btn{
+  background-color: var(--sec-color);
+}
+.price{
+  color: var(--Third-color);
+}
+.btn{
+  background-color: var(--Third-color);
+  color: white;
+}
+.offer-img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 1rem;
+  width: 100%;
+}

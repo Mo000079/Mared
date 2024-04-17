@@ -1,0 +1,171 @@
+<body>
+<div class="">
+        <div class="h1">
+            Order Details
+        </div>
+    </div>
+
+    <!-- order -->
+    <div class="container mt-5 pt-4">
+        <div class="res">
+        <div class="row justify-content-between ">
+            <!-- Order details card -->
+            <div class="row col-lg-8 cust">
+                <!-- title -->
+                <div class="row py-3 mt-5 cart">
+                    <div class="col-lg-7 h5">
+                        PRODUCTS
+                    </div>
+                    <div class="col-lg-2 h5 ">
+                        PRICE
+                    </div>
+                    <div class="col-lg-1 h5 ">
+                        QTY
+                    </div>
+                    <div class="col-lg-2 h5">
+                        TOTAL
+                    </div>
+                </div>
+                <!-- end title -->
+                <!-- body -->
+
+                <div class="row p-3 m-0 cart"  *ngFor="let order of OrderDetails">
+
+                    <div class="row col-lg-7 align-items-center">
+                      <div class="col-lg-4 hid">
+                        <img class="w-100 h-100" src="https://localhost:7104/Images/{{order.orderImgUrl}}">
+                      </div>
+                      <div class="col-lg-7 h4">
+                        {{order.productName}}
+                      </div>
+                    </div>
+                    <div class="col-lg-2 h4 p-4 text-muted">
+                      {{order.price / order.quantity}} £
+                    </div>
+                    <div class="col-lg-1 h4 p-4 text-muted">
+                      {{order.quantity}}
+                    </div>
+                    <div class="col-lg-2 h4 p-4 text-muted">
+                      {{order.price}} £
+                    </div>
+
+
+                </div>
+
+                <!-- row 2 -->
+                <div class="row cart">
+                    <div class="col-lg-8"></div>
+                    <div class="col-lg-2 h4">
+                        Total
+                    </div>
+                    <div class="col-lg-2 h4">
+                        {{totalPrice}} £
+                    </div>
+                </div>
+            </div>
+            <!-- end body -->
+            <!-- end Order details crd -->
+            <!-- customer card -->
+            <div class="row col-lg-4 cust px-2 my-3">
+                <div class="row align-items-center pl-5">
+                    <div class="col-lg-4 hid ">
+                        <img class="w-100 h-100 rounded-circle" src="./../../../../assets/img/OIP.jpg">
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="h3">
+                            {{orders.userName}}
+                        </div>
+
+                    </div>
+                </div>
+                <div class="h4">
+                    Orders: {{OrderDetails.length}}
+                </div>
+                <div >
+                    <div class="h4 pb-3">
+                        Contact info
+                    </div>
+                    <div class="h4 text-muted">
+                        <!-- Email: Shamus889@yahoo.com -->
+                    </div>
+                        <!-- Email: Shamus889@yahoo.com
+                    </div> -->
+                    <div class="h4 text-muted">
+                        {{orders.userPhoneNo}}
+
+                    </div>
+                </div>
+            </div>
+            <!-- end customer card -->
+        </div>
+        <!-- start -->
+        <div class="row justify-content-between">
+            <!-- Shipping details card -->
+            <div class=" row col-lg-8  cust mt-3 gy-5 px-4 justify-content-between">
+                <div class="col-lg-7">
+                    <div class="h4">
+                        Order was placed (Order ID: {{orders.id}})
+                    </div>
+                    <div class="h5 text-muted">
+                        Your order has been placed successfully
+                    </div>
+                </div>
+                <div class="col-lg-3 h5 text-muted">
+                    {{orders.date}}
+                </div>
+                <div class="col-lg-7 ">
+                    <div class="h4">
+                        Pick-up
+                    </div>
+                    <div class="h5 text-muted">
+                        Pick-up scheduled with courier
+                    </div>
+                </div>
+                <div class="col-lg-3 h5 text-muted">
+                    {{orders.date}}
+                </div>
+                <div class="col-lg-7 ">
+                    <div class="h4">
+                        Dispatched
+                    </div>
+                    <div class="h5 text-muted">
+                        Item has been picked up by courier
+                    </div>
+                </div>
+                <div class="col-lg-3 h5 text-muted">
+                  {{orders.date}}
+                </div>
+
+
+            </div>
+            <!-- end shipping details crd -->
+            <!-- Shipping address -->
+            <div class="col-lg-4  my-2">
+                <div class="cust p-3">
+                    <div class="h4">
+                        Shipping address
+                    </div>
+                    <div class="h4 text-muted px-4 my-3">
+                        {{orders.location}}
+                    </div>
+
+                </div>
+                <!-- Billing address -->
+                <div class=" mt-5 p-3 cust ">
+                    <div class="h4">
+                        Billing address
+                    </div>
+                    <div class="h4 text-muted px-4 my-3">
+                        {{orders.location}}
+                    </div>
+                </div>
+                <!-- Billing address -->
+                <!-- end Shipping address -->
+            </div>
+        </div>
+    </div>
+    </div>
+     <!-- end -->
+        <!-- end order -->
+
+</body>

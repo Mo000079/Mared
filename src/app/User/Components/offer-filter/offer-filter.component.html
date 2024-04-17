@@ -1,0 +1,102 @@
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container offers">
+    <div class="row">
+        <aside class="col-md-3">
+
+            <div class="card mt-4">
+                <article class="filter-group ">
+                    <header class="card-header d-flex justify-content-between">
+                        <h6 class="title mt-2">Search</h6>
+
+                        <a class="btn" data-bs-toggle="collapse" href="#category" role="button" aria-expanded="false"
+                            aria-controls="collapseExample">
+                            <i class="icon-control fa fa-chevron-down"></i>
+                        </a>
+                    </header>
+                    <div class="filter-content collapse show" id="category">
+                        <div class="card-body">
+                            <!--search filter-->
+                            <form class="pb-3" action="">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search..." #search (keyup.enter)="Search(search)">
+                                </div>
+                            </form>
+                              <!--search filter-->
+                        </div> 
+                    </div>
+                </article> 
+                <article class="filter-group">
+
+                    <header class="card-header d-flex justify-content-between">
+                        <h6 class="title">Price & Categories </h6>
+                        <a class="btn " data-bs-toggle="collapse" href="#price-range" role="button"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            <i class="icon-control fa fa-chevron-down"></i>
+                        </a>
+                    </header>
+                    <div class="filter-content collapse show" id="price-range">
+                        <!--Price & Categories-->
+                        <form action="" (ngSubmit)="SearchCatPrice()">
+                            <div class="ms-3 mt-3 form-check"  (change)="ChangeGategor($event)"> 
+                                <input class="form-check-input" type="radio" name="cat" value="0"  id="0" >
+                                <label class="form-check-label" for="all">
+                                  All
+                                </label>
+                              </div>
+                            <div class="ms-3 mt-3 form-check" *ngFor="let category of Categories" (change)="ChangeGategor($event)"> 
+                                <input class="form-check-input" type="radio" name="cat" [value]="category.id" #categoory  [id]="category.id" >
+                                <label class="form-check-label" [for]="category.id">
+                                  {{category.name}}
+                                </label>
+                              </div>
+                            <div class="card-body">
+                                <mdb-range  class="range" [min]="10" [max]="1000" (rangeValueChange)="onRangeValueChange($event)"></mdb-range>
+                                <!-- <div class="range-value">Price <span id="rangValue" class="ms-1">{{Price}}</span> -->
+                                <!-- </div> -->
+                            </div> 
+                            <button type="submit" class="btn ms-3 mb-2 apply">Apply</button>
+                        </form>
+                        <!--Price & Categories-->
+                    </div>
+                    
+                </article> <!-- filter-group .// -->
+            </div> <!-- card.// -->
+
+        </aside>
+        <main class="col-md-9">
+
+            <header class="border-bottom mb-4 py-3 ">
+                <div class=" row ">
+                    <div class="col-6">{{count}} Items found </div>
+                    <div class="col-6">
+                        <select class=" form-control" (change)="orderBy($event)">
+                            <option >All</option>
+                            <option value="StartDate">Latest items</option>
+                            <option value="Discount">Higher price</option>
+                        </select>
+                    </div>
+                </div>
+            </header><!-- sect-heading -->
+
+            <div *ngIf="isvisible ==true">
+                <div class="row">
+                    <app-offer-card class="col-12 col-sm-6 col-md-3  me-2 mb-2 card card-product-grid" style="width: 15rem;"
+                        [myOffer]="item" *ngFor="let item of Offers | paginate: { itemsPerPage: pageSize, currentPage: pageIndex,totalItems:count }">
+                    </app-offer-card>
+                    
+                    <!-- col.// -->
+                </div> <!-- row end.// -->
+                  
+                   
+                <div class="mt-4" aria-label="Page navigation sample">
+                    <pagination-controls class="my-pagination" (pageChange)="ChangePage($event)"></pagination-controls>
+               
+                </div>
+            </div>
+            <div class="col-12 u-emoty mt-5 mb-5">
+                <app-u-empty [visible]="!isvisible"></app-u-empty>
+            </div>
+        </main>
+    </div>
+</div>

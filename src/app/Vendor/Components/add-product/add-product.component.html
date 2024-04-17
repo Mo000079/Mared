@@ -1,0 +1,252 @@
+<form (ngSubmit)="SubmitProduct()" [formGroup]="AddProductForm">
+    <div class="add-pro mt-5 ">
+        <div class="container bg-light">
+            <div class="row add-info  p-3">
+
+                <div class="addProduct  p-3">
+                    <!--page title-->
+                    <div
+                        class="add-pro-title bg-wihte d-flex flex-column flex-md-row justify-content-between px-3 pt-4">
+                        <div class="h4" *ngIf="id==0">Add New Product</div>
+                        <div class="h4" *ngIf="id!=0">Edit this Product</div>
+                        <!-- <div action="" class="published-btn d-flex justify-content-between mb-3 ">
+                            <button class="btn btn-sec-color me-2" type="button">Draft</button>
+                            <button class="btn btn-sec-color " type="button">Publish</button>
+                        </div> -->
+
+                        <!-- <div class="desc-btn">
+                            <button class="btn btn-sm ms-1" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#description" aria-expanded="false" aria-controls="description"><i
+                                class="fa fa-angle-up "></i></button>
+                        </div>
+                  
+                    <div class="desc-input p-3 bg-wihte  collapse" id="description">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div> -->
+                    </div>
+                </div>
+
+
+
+                <div class="col-12 col-md-8 p-3">
+                    <!--add product title-->
+                    <div class="pro-title bg-wihte mb-3 p-3">
+                        <label for="addproducttitle" class="form-label">Product Name</label>
+                        <input formControlName="Name" type="text" class="form-control" id="addproducttitle">
+                    </div>
+                    <!--description-->
+                    <div class="pro-description ">
+                        <div class=" bg-wihte pro-desc-heading px-3 pt-4 pb-3 mb-2">
+                            <div class="h4 mb-3">
+                                Product Description
+                            </div>
+                            <div class="form-group  ">
+                                <textarea formControlName="Description" class="form-control"
+                                    id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--product Data-->
+                    <div class="pro-data bg-wihte  px-3 pt-4  pb-1 mb-2 mt-3 ">
+                        <div class="pro-desc-heading  border-bottom mb-4">
+                            <div class="h4">
+                                Product Data
+                            </div>
+                            <p class="mt-3" id="data">
+                                <button class="btn btn-primary  me-1" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#media" aria-expanded="false" aria-controls="media">Media</button>
+                                <button class="btn btn-primary me-1" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#info" aria-expanded="false" aria-controls="info">Prdocut
+                                    Info</button>
+                                <button class="btn btn-primary  me-1" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#shipping-info" aria-expanded="false"
+                                    aria-controls="shipping-info">Shipping
+                                    Info</button>
+
+
+                            </p>
+                        </div>
+                        <!--tab-->
+
+                        <div class="collapse" id="media">
+                            <div class="card card-body">
+                                <div class="media">
+                                    <div class="row  mt-4 mb-3">
+
+                                        <div class="col-12 col-md-6">
+                                            <div class="fw text-center">
+                                                Add Images<span class="text-secondary ms-1 ">(jpg/png)</span>
+                                            </div>
+                                            <div class="upload-img text-center">
+                                                <label for="formFileMultiple" class="mt-2 upload-img-label">
+                                                    <input type="file" class="form-control p-5" id="formFileMultiple"
+                                                        #gallary (change)="upload(gallary)" multiple hidden>
+                                                    <div class="text-center p-4">
+                                                        <i
+                                                            class="fa-solid fa-arrow-up-from-bracket fs-1 mb-3 text-secondary"></i>
+                                                        <div>Drag And Drop Image<br>OR</div>
+                                                        <span class="btn upload-img-btn mt-1">Browse</span>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collapse" id="info">
+                            <div class="card card-body">
+                                <div action="" class="mb-3 row">
+                                    <label for="inputPrice" class="col-md-3 col-form-label">Price</label>
+                                    <div class="col-md-9">
+                                        <input formControlName="Price" type="number" min="1" class="form-control"
+                                            id="inputPrice" required>
+                                    </div>
+                                </div>
+                                <div action="" class="mb-3 row" *ngIf="clothes">
+                                    <label for="inputColor" class="col-md-3 col-form-label">Color & Size</label>
+                                    <div class="col-md-9 row">
+                                        <div class=" col-md-4">
+                                            <!-- <label for="inputColor" class="col-md-6 col-form-label">Color</label> -->
+                                            <input formControlName="Color" type="color" class="form-control"
+                                                id="inputColor">
+                                        </div>
+                                        <div class=" col-md-8">
+                                            <div class="d-flex justify-content-between">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="sizesmall"
+                                                        id="small" value="s">
+                                                    <label class="form-check-label" for="sizesmall">
+                                                        S
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="sizemedium"
+                                                        id="medium" value="m">
+                                                    <label class="form-check-label" for="sizesmall">
+                                                        M
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="sizelarg"
+                                                        id="larg" value="l">
+                                                    <label class="form-check-label" for="sizelarg">
+                                                        L
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="sizexlarg"
+                                                        id="xlarg" value="xl">
+                                                    <label class="form-check-label" for="sizexlarg">
+                                                        XL
+                                                    </label>
+                                                </div>
+
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div action="" class="mb-3 row">
+                                    <label for="quantity" class="col-sm-3 col-form-label">Quantity</label>
+                                    <div class="col-sm-9">
+                                        <input formControlName="Quantity" type="number" min="1" class="form-control"
+                                            id="quantity">
+                                    </div>
+                                </div>
+                                <div action="" class="mb-3 row">
+                                    <label for="brandName" class="col-sm-3 col-form-label">BrandName</label>
+                                    <div class="col-sm-9">
+                                        <input formControlName="BrandName" type="text" class="form-control"
+                                            id="brandName">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="collapse" id="shipping-info">
+                            <div class="card card-body">
+                                <div class="row g-1">
+                                    <div class="col-12 col-md-3">
+                                        <label for="weight" class="mt-1">Weight (kg) </label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <input formControlName="Weight" type="number" class="form-control" min="1"
+                                            id="weight" placeholder="0">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     
+
+
+                        <!--tab-->
+
+                    </div>
+                </div>
+
+                <!--right side-->
+                <div class="col-12 col-md-4 ">
+                    <div class="container">
+                        <!--button-->
+                        <button class="btn btn-sec-color col-12 mb-4" [routerLink]="['user/productdetails', 1]">Preview
+                            Changed</button>
+                        <!--product category-->
+                        <div class="pro-category bg-wihte px-2 p-3 mb-2">
+                            <div class=" mb-4 border-bottom d-flex justify-content-between">
+                                <div class="h4">
+                                    Category
+                                </div>
+                                <div class="category-btn ">
+                                    <button class="btn btn-sm ms-1" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#Category" aria-expanded="false" aria-controls="Category"><i
+                                            class="fa fa-angle-up "></i></button>
+                                </div>
+                            </div>
+                            <!-- dropdown -->
+                            <div class="px-3 collapse show" id="Category">
+                                <div class="ms-3 mt-3 form-check" *ngFor="let category of Categories">
+                                    <input class="form-check-input" type="radio" name="category" [value]="category.id"
+                                        (change)="GetSubCat(category.id)" [checked]="category.id==1" [id]="category.id">
+                                    <label class="form-check-label" [for]="category.id">
+                                        {{category.name}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Product Tag-->
+                        <div class="pro-tag bg-wihte px-2 p-3 mb-2">
+                            <div class="d-flex justify-content-between mb-4 border-bottom">
+                                <div class="h4">
+                                    SupCategory
+                                </div>
+                                <div class="supcategory-btn ">
+                                    <button class="btn btn-sm ms-1" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#SupCategory" aria-expanded="false"
+                                        aria-controls="SupCategory"><i class="fa fa-angle-up "></i></button>
+                                </div>
+                            </div>
+                            <div class="px-3 collapse show" id="SupCategory">
+
+                                <div class="ms-3 mt-3 form-check" *ngFor="let item of SubCategory">
+                                    <input class="form-check-input" type="radio" name="supCat"
+                                        (change)="supCatCheck(item.id)" [value]="item.id" [id]="item.id">
+                                    <label class="form-check-label" [for]="item.id">
+                                        {{item.name}}
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="btn btn-sec-color col-8 mb-4" type="submit">Save Changed</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>

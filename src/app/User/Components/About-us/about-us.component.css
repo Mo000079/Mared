@@ -1,0 +1,72 @@
+.main-sec .sec-img
+{
+    box-shadow: 5px #fff;
+    border-top-right-radius: 30px;
+    border-end-end-radius: 30px;
+}
+.main-sec .first-img
+{
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.main-sec .sub-title
+{
+    width: max-content;
+    height: auto;
+    border-radius: 50px;
+    color: #fff;
+    background-color: var(--Third-color);
+}
+.main-sec .dec
+{
+    font-size: 16px !important;
+}
+.main-sec .icon-section
+{
+    font-size: 16px;
+    font-weight:500;
+}
+/********************************* our teams ******************************************/
+.our-team 
+{
+    background-color: #fff;
+}
+.our-team .subtitle
+{
+    font-family: "Pacifico",cursive;
+    color: var(--Third-color);
+}
+.our-team .name
+{
+    color: var( --primary-color);
+    margin-top: 10px;
+    /* color: var(--Third-color); */
+}
+.our-team .img 
+{
+    transition: transform .2s;
+}
+.our-team .img:hover
+{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.our-team .desc
+{
+    font-size: 16px;
+}
+.text-third
+{
+    color: var(--Third-color);
+}
+.our-team .fa-solid ,.testimonals .fa-solid
+{
+    color: var(--sec-color);
+    font-size: 25px;
+}
+/********************** testimonals************************************/
+.testimonals
+{
+    background: url("../../../../assets/img/bg_tour_hightlight.webp");
+    background-size: cover;
+}

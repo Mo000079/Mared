@@ -1,0 +1,230 @@
+<!---->
+
+<!--body-->
+
+<!--begin carousel-->
+<div class="slider">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="assets/img/full-shot-woman-online-fashion-shopping.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/digital-wardrobe-transparent-screen.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/slider-image-6.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>A different kind of grocery store</h2>
+                    <div class="contect-text">Only this week. Don’t miss...</div>
+                    <div class="btn btn-sm rounded mt-4"  [routerLink]="['/user/shop','','']">Shope Now <i class='fa fa-arrow-right'></i></div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <i class='fa fa-arrow-left '></i>
+            <!-- <span class="carousel-control-prev-icon " aria-hidden="true">   -->
+            <!-- </span> -->
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <!-- <i class='fa fa-chevron-right'></i> -->
+            <i class='fa fa-arrow-right'></i>
+            <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+<!--end carousel-->
+
+<!--shope_brand-->
+<div class="container shope_brand">
+
+    <h4 class="h4">Shop by Brand</h4>
+
+    <div class="container text-center">
+        <div class="row">
+            <!-- <div class="col " *ngFor="let brand of brands">
+                <img src="https://localhost:7104/Images/{{brand}}" style="width: 100px ; height: 100px;">
+            </div> -->
+            <div class="col">
+                <img src="assets/img/brand-2.webp">
+            </div>
+            <div class="col">
+                <img src="assets/img/brand-3.webp">
+            </div>
+            <div class="col">
+                <img src="assets/img/brand-4.webp">
+            </div>
+            <div class="col">
+                <img src="assets/img/brand-5.webp">
+            </div>
+            <div class="col">
+                <img src="assets/img/brand-6.webp">
+            </div>
+            <div class="col">
+                <img src="assets/img/brand-2.webp">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="assets/img/brand-7.webp">
+            </div>
+            <div class="col">
+                <img src="assets/img/brand-8.webp">
+            </div>
+            <div class="col">
+                <img src="assets/img/brand-9.webp">
+            </div>
+            <div class="col">
+                <img src="assets/img/brand-10.webp">
+            </div>
+            <div class="col">
+                <img src="assets/img/brand-11.webp">
+            </div>
+            <div class="col">
+                <img src="assets/img/brand-12.webp">
+            </div>
+        </div>
+    </div>
+</div>
+<!--shope_brand-->
+
+<!--popular Sales-->
+<div class="popular_sales mt-5 mb-2 pt-5 pb-5">
+    <div class="container mb-5">
+        <div class="row title ">
+            <div class="col-10">
+                <div class="h4">
+                    Popular Sales
+                </div>
+            </div>
+            <div class="col">
+                <div class="btn btn-sm fw-bold shop-btn" routerLink="/user/shop">View More <span class="arrow btn"><i class='fa fa-arrow-right'></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="carouselExampleControls2" class="carousel slide  " data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container text-center ">
+                    <div class="row">
+                        <app-product-card  *ngFor="let item of products |  paginate: { itemsPerPage: pageSize, currentPage: pageIndex,totalItems:count }" [product]="item" class="col-12 col-sm-6 col-md-3 position-relative  pr-5 "> <!--product -->
+                        </app-product-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleControls2"
+        data-bs-slide="prev" >
+        <span class="carousel-control-prev-icon btn" aria-hidden="true" (click)="Prv()"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleControls2"
+        data-bs-slide="next" >
+        <span class="carousel-control-next-icon btn" (click)="Next()" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!--end  popular Sales-->
+
+<!---->
+<div class="short-desc  px-2 py-4">
+    <div class=" container ">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <a class=" navbar-brand display-1 fw-bold "><img src="../../../../assets/img/logo2.png" style="width: 125px; height: 80px;"></a>
+                <h1 class="display-5 mt-5 fw-bold ml-5 ">Earn free Points
+                    with Mared</h1>
+                <p class="h5 text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique,
+                    cum?
+                </p>
+                <button type="button" class="btn  rounded text-light mt-4"
+                    style="background-color: #1A936F; font-size: 16px; " routerLink="/user/shop">Discover
+                    More</button>
+            </div>
+            <div class="col-12 col-md-6">
+                <img src="assets/img/rightLargeImg.webp" class="w-100">
+            </div>
+        </div>
+    </div>
+</div>
+<!---->
+<!--Begin Offers-->
+<div class="offers p-4">
+    <div class=" container">
+        <div class="row title mb-3">
+            <div class="col-10">
+                <div class="h4">
+                    Offers
+                </div>
+            </div>
+            <div class="col ">
+                <div class="btn btn-sm fw-bold" routerLink="/user/offers">View More <span class="arrow">
+                        <i class='fa fa-arrow-right'></i></span></div>
+            </div>
+        </div>
+        <div class="row cards ">
+            <app-offer-card class="col-12 col-sm-6 col-md-3 card position-relative" style="width: 15rem;"  [myOffer]="item" *ngFor="let item of Offers"></app-offer-card> 
+        </div>
+    </div>
+</div>
+<!--End Offers-->
+<!--feature-->
+<div class="pt-5 pb-5 benfits-icons" style="background-color: #FFBB38;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-12 col-sm-6 mt-2">
+                <div class="row">
+                    <div class="col-5 icon">
+                        <i class="fa fa-shopping-bag"></i>
+                    </div>
+                    <div class="col">
+                        <div class="fw-bold">Free Shipping</div>
+                        When ordering over $100
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3  col-12 col-sm-6 mt-2">
+                <div class="row">
+                    <div class="col-5 icon">
+                        <i class="fa fa-credit-card"></i>
+                    </div>
+                    <div class="col">
+                        <div class="fw-bold">Secure Payment</div>
+                        100% Secure Online Payment
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3  col-12 col-sm-6 mt-2">
+                <div class="row">
+                    <div class="col-5 icon">
+                        <i class="fa fa-undo"></i>
+                    </div>
+                    <div class="col">
+                        <div class="fw-bold">Free Return</div>
+                        Get Return within 30 days
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-12 col-sm-6 mt-2">
+                <div class="row">
+                    <div class="col-5 icon">
+                        <i class="fa fa-trophy"></i>
+                    </div>
+                    <div class="col">
+                        <div class="fw-bold">Best Quality </div>
+                        Original Product Guarenteed
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!---->
+
+<!--end body-->

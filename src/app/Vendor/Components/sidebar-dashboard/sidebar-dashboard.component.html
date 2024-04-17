@@ -1,0 +1,17 @@
+<div class="sideBar-dashboard p-3" [style.width]="isCollapse?'5%':'16%'">
+  <div class="logo py-3">
+    <h3 class="link" [style.font-size]="isCollapse?'0px':'30px'">
+      <a>
+        MARED
+      </a>
+    </h3>
+  </div>
+  <ul class="sideBar-links list-unstyled p-0 m-0">
+    <li class="link dashboard" [style.padding-top]="isCollapse?'2rem':'0rem'"><a routerLink="/vendor/dashboard"><i class="fa-solid fa-chart-pie"></i><span [style.font-size]="isCollapse?'0px':'20px'">Dashboard</span></a></li>
+    <li class="link"><a routerLink="/vendor/productlist"><i class="fa-solid fa-store"></i><span [style.font-size]="isCollapse?'0px':'20px'">Store</span></a></li>
+    <li class="link "><a routerLink="/vendor/addproduct"><i class="fa-solid fa-upload"></i><span [style.font-size]="isCollapse?'0px':'20px'">Add Product</span></a></li>
+    <li class="link offer"><a routerLink="/vendor/offers"><i class="fa-solid fa-money-bill-1-wave"></i><span [style.font-size]="isCollapse?'0px':'20px'">My Offers</span></a></li>
+    <li class="link orderlist"><a routerLink="/vendor/orderlist"><i class="fa-solid fa-inbox"></i><span [style.font-size]="isCollapse?'0px':'20px'">Orders</span></a></li>
+    <li class="link" [style.padding-bottom]="isCollapse?'.9rem':'2rem'"><a routerLink="vendor-review"><i class="fa-regular fa-comments"></i><span [style.font-size]="isCollapse?'0px':'20px'">Reviews</span></a></li>
+    <li class="link"><a routerLink="/vendor/profile-setting"><i class="fa-solid fa-gear"></i><span [style.font-size]="isCollapse?'0px':'20px'">Settings</span></a></li>
+    <li class="link pt-3"><a class="btn p-0" (click)="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i><span [style.font-size]="isCollapse?'0px':'20px'">Log Out</span></a></li>

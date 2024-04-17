@@ -1,0 +1,31 @@
+.card
+{
+    
+}
+/* .card-title
+{
+    color: #FFBB38;
+} */
+.card img{
+    width: 100px;
+    align-items: center;
+}
+.active-btn 
+{
+    background-color: #1A936F;
+    color: white;
+    border-radius: 10px;
+   
+}
+.active
+{
+    background-color: #1A936F;
+    color: white ;
+}
+.active .btn
+{
+    color: #1A936F;
+    background-color: white;
+    border: 2px solid #1A936F;
+    border-radius: 10px;
+}

@@ -1,0 +1,41 @@
+
+.h1{
+  font-size: 1.2rem !important;
+}
+.h3{
+  font-size: 1rem !important;
+}
+.h4 , .h5{
+  font-size: 0.97rem !important;
+}
+.h6{
+  font-size: .94rem !important;
+}
+ 
+
+
+body{
+  margin-top: 4%;
+  margin-left: 1%;
+}
+.cust {
+  background-color: white;
+}
+
+@media screen and (max-width: 990px) {
+  .res{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .hid{
+    display: none;
+  }
+  .cart{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+
+
+
+  }
+  
+}

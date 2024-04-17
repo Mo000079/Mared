@@ -1,0 +1,87 @@
+<!--top nav -->
+<nav class="navbar bg-light p-0">
+    <div class="container">
+        <a routerLink="/user"><img src="../../../../assets/img/logo2.png" style="width: 125px; height: 80px;"></a>
+        <form class="d-lg-flex d-none " role="search" >
+            <input class="form-control me-2" type="search"  placeholder="Search Product...." aria-label="Search" #search>
+            <select class="form-select rounded-0" aria-label="Default select example"  [(ngModel)]="selectedCateg" #category>
+                <option value="0" selected>All Category</option>
+                <option [value]="item.id" *ngFor="let item of Categories">{{item.name}}</option>
+            </select>
+            <button class="btn btn-sm btn-outline-success" type="button" (click)="goSearch(category,search)" >Search</button>
+        </form>
+        <div *ngIf="isLogin == false">
+            <div class="btn login-reg-btn" routerLink="/login">
+                <i class="fa fa-sign-in" aria-hidden="true"></i>  Login
+            </div>
+            <div class="btn btn-sec " routerLink="/register">
+                 SignUp
+            </div>
+        </div>
+
+        <div class="d-flex  justify-content-between  items-center" *ngIf="isLogin == true">
+
+            <div class="btn-group  relative cursor-pointer me-3 me-lg-0">
+                <button type="button" class="user me-2" data-bs-toggle="dropdown" aria-expanded="false" ><i class="fa-solid fa-user text-black"></i>
+                </button>
+                <ul class="dropdown-menu w-75">
+                  <li><a class="dropdown-item" routerLink="/user/myacount">My Account</a></li>
+                  <li><a class="dropdown-item" routerLink="/user/order-history">My Orders</a></li>
+                  <li><a class="dropdown-item d-lg-none"  routerLink="/user/cart"> Cart</a></li>
+                  <li><a class="dropdown-item d-lg-none"  routerLink="/user/wishlist"> Wishlist</a></li>
+                  <li><a class="dropdown-item "  routerLink="/user/wallet">  Wallet</a></li>
+                  <li><a class="dropdown-item" (click)="logout()" > LogOut</a></li>
+                </ul>
+              </div>
+
+            <div class="cart relative cursor-pointer d-none d-lg-block">
+                <a routerLink="/user/cart" class="">
+                    <i class="fa-solid fa-cart-shopping text-black position-relative">
+                    <p class="CartItemCount text-black rounded-circle text-light">{{CartItemCount}}</p></i>
+                </a>
+            </div>
+
+            <div class="favorite relative cursor-pointer d-none d-lg-block">
+                <a routerLink="/user/wishlist">
+                    <i class="fa-solid fa-heart text-black position-relative">
+                    <p class="WishlistCount text-black rounded-circle text-light">{{WishlistCount}}</p></i>
+
+                </a>
+            </div>
+
+        </div>
+    </div>
+</nav>
+<!--end top nav-->
+<!--nav2 menu-->
+<div class="navbar navbar-expand-lg menu ">
+
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/user/home"><i
+                            class="fa fa-fw fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active-link" routerLink="/user/shop">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active-link"routerLink="/user/aboutus">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active-link" routerLink="/user/offers">Offer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active-link" routerLink="/user/contactus">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <button type="button" class="btn " *ngIf="!iscustomer" (click)="BecomeSeller()">Become a Seller </button>
+    </div>
+</div>

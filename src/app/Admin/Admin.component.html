@@ -1,0 +1,24 @@
+<div class="row w-100 justify-content-between"
+  [ngClass]="{'justify-content-end': isCollapse,'justify-content-between':!isCollapse}">
+  <div class="col-2" [ngClass]="{'col-1': isCollapse}">
+    <app-sidebar-admin-dash [isCollapse]="isCollapse"></app-sidebar-admin-dash>
+  </div>
+  <div class="col-10" [ngClass]="{'col-11 ps-0': isCollapse}">
+    <div class="dash-header mt-3 d-flex justify-content-between align-items-center">
+      <div class="collapse-icon pb-4 d-lg-block d-none">
+        <button class="btn p-0 m-0" id="sidebarCollapseBtn" (click)="collapse()">
+          <i class="fa-solid fa-bars fs-5"></i>
+        </button>
+      </div>
+
+      <div class="user-img d-flex justify-content-end align-items-center text-end d-md-block">
+        <a class="user text-black" routerLink="/vendor/profile-setting">
+          <span class="pe-2">Harry Jhon</span>
+          <img src="./assets/img/01.jpg" class="w-25" alt="">
+           
+        </a>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

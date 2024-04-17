@@ -1,0 +1,57 @@
+<form class="row g-3" [formGroup]="shopForm" (ngSubmit)="shopChanges()">
+  <!-- start update shop info -->
+  <div class="col-md-6 mt-3">
+    <label class="form-label" style="color: var(--bs-gray-500);">Store Name<span class="text-danger">*</span></label>
+    <input type="text" class="form-control" [(ngModel)]="name" formControlName="Name">
+  </div>
+  <div class="col-md-6 mt-3">
+    <label class="form-label" style="color: var(--bs-gray-500);">Commercial Number<span
+        class="text-danger">*</span></label>
+    <input type="text" class="form-control" [(ngModel)]="commercialNumber" formControlName="CommercialNumber">
+  </div>
+  <!-- Address -->
+
+  <div class="col-12 mt-3">
+    <label class="form-label" style="color: var(--bs-gray-500);">Description</label>
+    <textarea class="form-control" rows="3" formControlName="Description" [(ngModel)]="description"></textarea>
+  </div>
+
+  <div class="col-12 mt-3">
+    <label class="form-label" style="color: var(--bs-gray-500);">Location</label>
+    <textarea class="form-control" rows="3" formControlName="Location"
+      spellcheck="false"  [(ngModel)]="Location"></textarea>
+  </div>
+  <!--shop img -->
+  <div class="col-12 mt-5">
+    <label class="form-label p-2" style="color: var(--bs-gray-500);">Upload your Shop Image<span
+        class="text-danger">*</span></label>
+    <div class="d-flex align-items-center " style="justify-content: space-evenly  ;">
+      <img [src]="shopImgUrl" id="uploadfile-1-preview"  class="w-25  border border-white border-3 shadow" alt="Vendor image"
+      >
+      <!-- Upload button -->
+      <label class="btn btn-sm text-white mb-0 p-2" style="background-color: #1A936F !important;" for="uploadImg">
+        <i class="fa-solid fa-plus"></i>
+        Change Image</label>
+      <input id="uploadImg" #img (change)="uploadimg(img)" class="form-control d-none btn btn-sm" type="file">
+    </div>
+  </div>
+  <!-- shop logo -->
+  <div class="col-12 mt-5">
+    <label class="form-label p-2" style="color: var(--bs-gray-500);">Upload Shop Logo<span
+        class="text-danger">*</span></label>
+    <div class="d-flex align-items-center " style="justify-content: space-evenly  ;">
+      <img [src]="LogoImgUrl" id="uploadImg" class="w-25  border border-white border-3 shadow"
+        alt="Vendor image">
+      <!-- Upload button -->
+      <label class="btn btn-sm mb-0 p-2 text-white" style="background-color: #1A936F !important;" for="uploadLogo">
+        <i class="fa-solid fa-plus"></i>
+        Change Image</label>
+      <input id="uploadLogo" #logo (change)="uploadLogo(logo)" class="form-control d-none btn btn-sm" type="file">
+    </div>
+  </div>
+  <!-- Button -->
+  <div class="col-12 text-end mt-3">
+    <button class="btn mb-0 text-white" type="submit" style="background-color: #1A936F">
+      Save Shop Changes</button>
+  </div>
+</form>

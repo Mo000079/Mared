@@ -1,0 +1,91 @@
+.card-body .checked
+{
+    color: var(--sec-color);
+}
+ .card-title
+{
+    font-size: 0.9rem;
+}
+.product_sale_btn
+{
+    background-color: var(--sec-color);
+    color: white;
+    font-size: 0.8rem;
+    bottom: -80px;
+    opacity: -1;
+    align-items: center;
+    /* bottom: 0px; */
+    transition: all 50ms ease-in-out;
+
+}
+
+.product_sale:hover   .product_sale_btn
+{
+    bottom: 0px;
+    opacity: 1;
+}
+.product_sale_abs
+{
+    top: 10px;
+    right: -50px;
+    opacity: 0;
+    transition: all 50ms ease-in-out;
+}
+.product_sale:hover  .product_sale_abs
+{
+    opacity: 10;
+    right: 20px;
+}
+.card-btn svg path
+{
+    margin-right: 5px;
+    color: var(--Third-color);
+}
+ .h6
+{
+    color: var(--Third-color);
+}
+.sele
+{
+    text-decoration: line-through;
+    color: var(--primary-color);
+}
+.quick-access-btns .btn
+{
+    background-color: #eeeff0;
+}
+.end-0
+{
+    top: 10px !important;
+    right: -50px !important;
+}
+.btn-sm
+{
+    padding: 10px 4px !important;
+    transition: all 2s ease-in-out;
+
+}
+.btn-sm:hover
+{
+    right: 0px;
+}
+
+.text-third-color
+{
+    color: var(--primary-color);
+}
+a
+{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+.earned-point
+{
+    background-color: var(--Third-color) !important;
+    padding: 8px 10px !important;
+    border-radius: 60% !important;
+}
+.fa-star
+{
+  color: rgb(255, 209, 5);
+}

@@ -1,0 +1,9 @@
+.user-img {
+  width: 30%;
+}
+
+.user-img img {
+  width: 17%;
+  border-radius: 1rem;
+}
+

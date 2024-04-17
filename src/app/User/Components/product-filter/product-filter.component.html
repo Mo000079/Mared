@@ -1,0 +1,65 @@
+<div class="products-filter ms-0 px-2 pt-3">
+  <h5 class="px-2 pb-2">Product categories</h5>
+  <div class="category px-2 pb-3">
+    Food & Drink
+  </div>
+  <ul class="filter-items list-unstyled position-relative" id="filterItem">
+    <li class="filter-item">
+      <div *ngFor="let subCate of SubCateList">
+        <input (Change)="selectedCat(subCate.name)" type="checkbox" *ngIf="subCate.categoryId == 1" class="me-1 subCate" name="{{subCate.name}}" id="">
+         <span *ngIf="subCate.categoryId == 1">{{subCate.name}}</span>
+      </div>
+    </li>
+
+    <div class="category px-2 pb-3 pt-4">
+      Clothes & Fashion
+    </div>
+    <li class="filter-item">
+      <div *ngFor="let subCate of SubCateList">
+        <input (Change)="selectedCat($event)" type="checkbox" *ngIf="subCate.categoryId == 2" class="subCate me-1" name="{{subCate.name}}" id="">
+        <span *ngIf="subCate.categoryId == 2">{{subCate.name}}</span>
+      </div>
+
+    </li>
+    <!-- <ul class="filter-items list-unstyled position-relative" id="filterItem"> -->
+
+  </ul>
+  <h5>Price Range</h5>
+  <input type="range" class="range" #val (change)="priceRng(val)">
+  <span class="range-value">Price <span id="rangValue" class="ms-1">{{val.value}}</span></span>
+
+
+
+
+  <h5 class="brand">Shop Name</h5>
+  <ul class="filter-items list-unstyled position-relative" id="filterBrand">
+    <li class="filter-item" *ngFor="let shop of shopList">
+      <input type="checkbox" class="me-1" name="" id="">
+      {{shop.name}}
+    </li>
+  </ul>
+  <h5 class="brand">Rating</h5>
+  <ul class="filter-items list-unstyled position-relative" id="filterBrand">
+    <li class="filter-item rating">
+      <input type="checkbox" class="me-1" name="" id="">
+      ★★★★★
+    </li>
+    <li class="filter-item rating">
+      <input type="checkbox" class="me-1" name="" id="">
+      ★★★★<span>★</span>
+    </li>
+    <li class="filter-item rating">
+      <input type="checkbox" class="me-1" name="" id="">
+      ★★★<span>★★</span>
+    </li>
+    <li class="filter-item rating">
+      <input type="checkbox" class="me-1" name="" id="">
+      ★★<span>★★★</span>
+    </li>
+    <li class="filter-item rating">
+      <input type="checkbox" class="me-1" name="" id="">
+      ★<span>★★★★</span>
+    </li>
+  </ul>
+  <button class="btn apply-btn" (click)="Apply()">Apply</button>
+</div>

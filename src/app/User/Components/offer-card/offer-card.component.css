@@ -1,0 +1,4 @@
+.rating .checked
+{
+    color: var(--Third-color) !important;
+}

@@ -1,0 +1,76 @@
+
+<h5 class="mb-5 ps-2 mt-2 fs-4">Dashboard</h5>
+<div class="row dashb-cards m-0 justify-content-center">
+  <div class="col-5 dash-card d-flex justify-content-between p-3">
+    <div>
+      <h6 class="text-secondary">Total Sales</h6>
+      <h3>{{salesCount}} <span class="text-muted">£</span></h3>
+    </div>
+    <i class="fa-solid fa-hand-holding-dollar fs-3"></i>
+  </div>
+  <div class="col-5 dash-card d-flex justify-content-between p-3 ms-3">
+    <div>
+      <h6 class="text-secondary">Total Products</h6>
+      <h3>{{ProductCount}}</h3>
+    </div>
+    <i class="fa-solid fa-bag-shopping fs-3"></i>
+  </div>
+  <div class="col-5 dash-card d-flex justify-content-between p-3 mt-3">
+    <div>
+      <h6 class="text-secondary">Orders</h6>
+      <h3>{{ordersCount}}</h3>
+    </div>
+    <i class="fa-solid fa-truck-ramp-box fs-3"></i>
+  </div>
+  <div class="col-5 dash-card d-flex justify-content-between p-3 mt-3 ms-3">
+    <div>
+      <h6 class="text-secondary">Reviews</h6>
+      <h3>{{ReviewsCount}}</h3>
+    </div>
+    <i class="fa-regular fa-comment fs-3"></i>
+  </div>
+</div>
+
+<div class="row m-0 my-5 justify-content-between align-items-start">
+  <div class="col-6">
+    <h4 class="text-center pb-3">Month’s Sale</h4>
+    <app-line-chart></app-line-chart>
+  </div>
+  <div class="col-6">
+    <h4 class="text-center pb-3">Best Selling Products</h4>
+    <app-pie-chart></app-pie-chart>
+  </div>
+</div>
+
+
+<!-- start to do list -->
+<!-- <div class="to-do-list mt-5 p-4 ms-2 d-none">
+  <h5><i class="fa-solid fa-list-check pe-2"></i>Tasks list</h5>
+  <hr>
+  <div class="task d-flex justify-content-between align-items-baseline">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">
+        Default checkbox
+      </label>
+      <p class="text-secondary">Lorem ipsum dolor sit amet consectetur.</p>
+    </div>
+    <i class="fa-solid fa-trash p-3"></i>
+  </div> -->
+
+  <!-- <hr> -->
+  <!-- <div class="d-flex justify-content-end">
+    <button class="btn">Cancel</button>
+    <div class="position-relative">
+      <button class="btn add-task-btn">Add Task</button> -->
+      <!-- add task popup -->
+      <!-- <div class="add-task d-none">
+        <input type="text" class="form-control" placeholder="Title">
+        <input type="text" class="form-control" placeholder="Description">
+        <button>Add</button>
+      </div> -->
+      <!-- end popup -->
+    <!-- </div> -->
+
+  <!-- </div>
+</div> -->

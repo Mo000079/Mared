@@ -1,0 +1,114 @@
+
+
+.product:hover{
+  background-color: #1a936f20;
+}
+
+/* Table */
+*{
+  font-size: 22px !important;
+}
+.h1{
+    font-size: 1.8rem !important;
+}
+.h2{
+  font-size: 1.45rem !important;
+
+}
+.h3{
+  font-size: 1.3rem !important;
+}
+table{
+    padding-left: 6%;
+}
+.product_img 
+{
+    width: 70px;
+
+}
+.checked
+{
+    color: var(--sec-color);
+}
+.btn-box button
+{
+    all: unset;
+
+}
+.border-bottom
+{
+    border-bottom: 1px dotted gray !important;
+   
+}
+.cancel
+{
+    color: rgb(253, 252, 252) !important;
+}
+.cancel:hover{
+  background-color: #f8f8f8 !important;
+  color: red !important;
+}
+
+
+.details
+{
+    background-color: var(--sec-color);
+
+}
+.arrow
+{
+    background-color: white !important;
+    color: var(--Third-color) !important;
+    font-size: 20px;
+}
+.text-sec
+{
+    color: var(--sec-color);
+}
+.text-third{
+
+    color: var(--Third-color);
+    
+}
+.dropdown-btn
+{
+    background-color: #b4b0b0 !important;
+}
+.prod-card-body
+{
+    background-color: #eeeeee;
+}
+
+/* Table */
+  /* form */
+
+
+  .btn
+  {
+    background-color: var(--sec-color);
+    color:var(--primary-color);
+    font-size: larger !important;
+
+  }
+  .btn:hover {
+    background-color: #f8f8f8;
+  }
+
+
+  @media only screen and (max-width: 560px) {
+    .cart{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .pro{
+      width: 100%;
+    }
+    .product{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+
+    
+  }

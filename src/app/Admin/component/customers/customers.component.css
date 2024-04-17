@@ -1,0 +1,46 @@
+.h1 {
+  font-size: 1.8rem !important;
+}
+
+.product_img {
+  width: 70px;
+
+}
+
+.btn-box button {
+  all: unset;
+
+}
+
+.border-bottom {
+  border-bottom: 1px dotted gray !important;
+
+}
+
+.btn {
+  color: rgb(253, 252, 252) !important;
+}
+
+.arrow {
+  background-color: white !important;
+  color: var(--Third-color) !important;
+  font-size: 20px;
+}
+
+.text-sec {
+  color: var(--sec-color);
+}
+
+.text-third {
+
+  color: var(--Third-color);
+
+}
+
+.dropdown-btn {
+  background-color: #b4b0b0 !important;
+}
+
+.prod-card-body {
+  background-color: #eeeeee;
+}

@@ -1,0 +1,123 @@
+<div class="countainer">
+    <div class="header pt-5 mb-4 text-center w-100">
+        <p class="h1">
+            Checkout
+        </p>
+    </div>
+</div>
+<div class="row  w-100 justify-content-between">
+    <!-- start bill details -->
+    <div class="countainer billing-details col-md-11 col-lg-6 pt-5">
+        <p class="h3 m-4 mb-5 mt-5">
+            Billing Details
+        </p>
+      <form>
+        <div class="row g-3 mt-3 p-2">
+            <div class="col">
+                <input type="text" class="form-control form-control" [(ngModel)]="username" placeholder="First name" name="first-name">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control form-control" placeholder="Last name" name="last-name">
+            </div>
+        </div>
+        <div class="row g-3 p-2">
+            <div class="col">
+                <input type="email" class="form-control form-control mt-2" [(ngModel)]="userEmail" placeholder="E-mail" name="email">
+            </div>
+            <div class="col ">
+                <input type="number" class="form-control form-control mt-2" [(ngModel)]="userPhone" placeholder="Phone number" name="number">
+            </div>
+        </div>
+        <div class=" mt-1 mb-4 p-1">
+            <div class="row g-3 mt-3 p-2">
+                <select class="form-select mb-2" aria-label="Default select example"> aria-expanded="false"  [(ngModel)]="city">
+                    <option class="dropdown-item" >Cairo</option>
+                    <option class="dropdown-item" >Giza</option>
+                    <option class="dropdown-item" >Alexandria</option>
+                    <option class="dropdown-item" >Port Said</option>
+                    <option class="dropdown-item" >Suez</option>
+                    <option class="dropdown-item" >Luxor</option>
+                    <option class="dropdown-item" >Asyut</option>
+                    <option class="dropdown-item" >Mansoura</option>
+                    <option class="dropdown-item" selected>Aswan</option>
+                </select>
+                <div class="col">
+                    <input type="text" class="form-control form-control" placeholder="Adress" name="first-name" [(ngModel)]="address">
+                </div>
+            </div>
+            <input class="form-control form-control mb-2 p-3" type="text" placeholder="Street" name="adress" [(ngModel)]="street" >
+            <input class="form-control form-control mb-2 p-3" type="text" placeholder=" Other instructions"
+                name="adress" [(ngModel)]="others">
+
+        </div>
+        <button  class="btn1 w-100 p-2 mb-3 border-0" (click)="MakeOrder()">
+            Order Now
+        </button>
+      </form>
+    </div>
+    <!-- end details -->
+    <!-- Order -->
+    <div class="countainer order-summary col-md-11 col-lg-5 px-4 " style="height: 560px;">
+        <p class="h3 m-4 text-center">
+            Order Summary
+        </p>
+        <div class="d-flex flex-row w-100 mb-2 justify-content-between">
+            <div>
+                <P class="h6 text-third">
+                Products
+                </P>
+            </div>
+            <div>
+                <P class="fs-6">
+                    Total
+                </P>
+            </div>
+        </div>
+        <div class="d-flex flex-row w-100 justify-content-between" *ngFor="let item of cartItems">
+            <p class="h6">
+          {{item.productName}}({{item.quantaty}})
+            </p>
+            <p class="h6 ">
+              {{item.originalPrice * item.quantaty}} 
+            </p>
+        </div>
+
+        <div class="d-flex flex-row w-100  justify-content-between mt-4">
+            <div class="h4">
+
+            </div>
+            <div class="h3 text-danger" >
+                <P>
+                    {{totalPrice |currency}}
+                </P>
+            </div>
+        </div>
+        <div class="fs-5">
+            Pay By:
+        </div>
+        <div class="d-flex justify-content-between mt-3">
+            <div class=" form-check" (change)="ChangePyby($event)">
+                <input class="form-check-input me-2 mt-2" type="radio" checked name="pay" value="cash" id="cash">
+                <label class="form-check-label" for="cash">
+                    Cash
+                </label>
+            </div>
+            <div class="fs-6">
+                {{totalPrice |currency}}
+            </div>
+        </div>
+        <div class="d-flex justify-content-between mt-3" *ngIf="isDisplayed">
+            <div class=" form-check" (change)="ChangePyby($event)">
+                <input class="form-check-input me-2 mt-2" type="radio" name="pay" value="point" id="point">
+                <label class="form-check-label" for="point">
+                    Points
+                </label>
+            </div>
+            <div class="fs-6">
+                {{totalPrice}} Points
+            </div>
+        </div>
+
+    </div>
+    <!-- end order -->
+</div>

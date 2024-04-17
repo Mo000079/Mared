@@ -1,0 +1,122 @@
+<div class="countainer">
+    <div class="header pt-5 mb-5 text-center w-100">
+        <p class="h1">
+            Checkout
+        </p>
+    </div>
+</div>
+<div class="row w-100">
+    <!-- start bill details -->
+    <div class=" col-12 col-lg-6 billing-details col-md-11 col-lg-6 pt-5">
+        <p class="h3 m-4 mb-1 mt-5">
+            Billing Details
+        </p>
+        <form>
+            <div class="row g-3 mt-3 p-2">
+                <div class="col">
+                    <input type="text" class="form-control form-control" placeholder="First name" name="first-name">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control form-control" placeholder="Last name" name="last-name">
+                </div>
+            </div>
+            <div class="row g-3 p-2">
+                <div class="col">
+                    <input type="email" class="form-control form-control mt-2" placeholder="E-mail" name="email">
+                </div>
+                <div class="col ">
+                    <input type="number" class="form-control form-control mt-2" placeholder="Phone number" name="number">
+                </div>
+            </div>
+            <div class=" mt-1 mb-4 p-1">
+                <div class="row g-3 mt-3 p-2">
+                    <select class="form-select mb-2" aria-label="Default select example" aria-expanded="false"
+                        [(ngModel)]="city">
+                        <option class="dropdown-item" selected>Aswan</option>
+                        <!-- <option disabled>Select a city</option> -->
+                        <option class="dropdown-item">Cairo</option>
+                        <option class="dropdown-item">Giza</option>
+                        <option class="dropdown-item">Alexandria</option>
+                        <option class="dropdown-item">Port Said</option>
+                        <option class="dropdown-item">Suez</option>
+                        <option class="dropdown-item">Luxor</option>
+                        <option class="dropdown-item">Asyut</option>
+                        <option class="dropdown-item">Mansoura</option>
+                        
+                    </select>
+                    <div class="col">
+                        <input type="text" class="form-control form-control" [(ngModel)]="address" required
+                            placeholder="Adress Line 1" name="first-name">
+                    </div>
+                </div>
+                <input class="form-control form-control mb-2 p-3" type="text" [(ngModel)]="street" required
+                    placeholder=" Adress Line 2" name="adress">
+                <input class="form-control form-control mb-2 p-3" type="text" [(ngModel)]="others" required
+                    placeholder=" Other instructions" name="adress">
+                <button class="btn w-100 p-2 mt-5 mb-3 rounded bg-sec-color " (click)="onSubmit()">
+                    Order Now
+                </button>
+            </div>
+        </form>
+    </div>
+    <!-- end details -->
+    <!-- Order -->
+    <div class=" order-summery  col-12 col-lg-5 ">
+        <div class="container bg-white mt-2">
+            <div class="pb-4">
+                <div class="order text-center bg-sec-color h3  p-3 ">
+                    Order Summary
+                </div>
+                <div class="d-flex justify-content-between mt-3">
+                    <div class="fs-4 text-sec-color">
+                        Offer Name:
+                    </div>
+                    <div class="fs-6">
+                        $Total (Quentity:<span class="text-sec-color">{{count}}</span>)
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-3">
+                    <div>
+                        <div class="fs-5  text-capitalize mb-3">
+                            {{OfferOrder.title}}
+                        </div>
+                        <ul>
+                            <li class="text-capitalize" *ngFor="let item of OfferOrder.offerDetailsViews">
+                                {{item.productName}}</li>
+                        </ul>
+                    </div>
+                    <div class="fs-6">
+                        {{OfferOrder.discount*count |currency}}
+                    </div>
+                </div>
+                <div class="fs-5 mt-5 ">
+                    Pay By:
+                </div>
+                <div class="d-flex justify-content-between mt-3">
+                    <div class=" form-check" (change)="ChangePyby($event)">
+                        <input class="form-check-input me-2 mt-2" type="radio" name="pay" value="cash" id="cash">
+                        <label class="form-check-label" for="cash">
+                            Cash
+                        </label>
+                    </div>
+                    <div class="fs-6">
+                        {{OfferOrder.discount*count |currency}}
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-3" *ngIf="isDisplayed">
+                    <div class=" form-check" (change)="ChangePyby($event)">
+                        <input class="form-check-input me-2 mt-2" type="radio" name="pay" value="point" id="point">
+                        <label class="form-check-label" for="point">
+                            Points
+                        </label>
+                    </div>
+                    <div class="fs-6">
+                        {{OfferOrder.discount*count}} Points
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- end order -->
+</div>

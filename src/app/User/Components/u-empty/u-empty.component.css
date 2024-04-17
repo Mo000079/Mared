@@ -1,0 +1,9 @@
+
+.empty {
+  width: 100%;
+  height: 100vh;
+}
+.empty span{
+  font-size: 1.3rem;
+  font-weight: 400;
+}

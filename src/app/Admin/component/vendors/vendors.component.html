@@ -1,0 +1,40 @@
+<table class="table table-striped d-none d-lg-block ms-4" id="allProductTable" aria-describedby="allProductTable_info">
+  <thead class="table-light">
+    <tr>
+
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <!-- <th scope="col pe-3">Shop Name</th>
+      <th scope="col">Plan</th>-->
+      <!-- <th scope="col">Status</th> -->
+            <th scope="col">
+            </th>
+    </tr> 
+  </thead>
+  <tbody class="table-group-divider w-100">
+    <tr *ngFor="let vendor of vendors">
+
+      <td class="py-1">#
+        <!-- #{{vendor.id}} -->
+      </td>
+      <td class="py-1 px-3"> {{vendor.name}} </td>
+      <td class="py-1 px-3"> {{vendor.email}} </td>
+      <!-- <td class="pl-4 py-1 px-3"> {{vendor.ShopName}}</td>
+      <td class="py-1 px-3">{{vendor.Plan}}</td>
+      <td class="py-1 px-3">
+        <select class="form-select">
+          <option value="active">Active</option>
+          <option value="suspended">Suspended</option>
+        </select>
+      </td>-->
+      <td scope="row m-0">
+          <button class="btn btn-success">
+            <i class="fa-regular fa-circle-check"></i>
+          </button>
+      </td> 
+
+
+    </tr>
+  </tbody>
+</table>

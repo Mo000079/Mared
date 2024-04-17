@@ -1,0 +1,48 @@
+
+<div class="container align-items-center mt-3">
+
+  <div class="d-flex justify-content-around flex-column flex-md-row">
+    <!--free-->
+    <div class="card text-center align-items-center free py-5" 
+    [ngClass]="{'notactive': Subscription.memberShipId != 1,'active':Subscription.memberShipId == 1}"
+     style="width: 18rem; ">
+      <img src="assets/img/free.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title mb-5 mt-3">FreeMembership</h5>
+        <!-- <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p> -->
+        <p class="card-text"><span class=" display-3">0</span> $</p>
+        <a class="btn btn-sm " (click)="AddNewSubscription(1)"
+        [ngClass]="{'d-block active-btn ': Subscription.memberShipId != 1,'d-none':Subscription.memberShipId == 1}">Get Now</a>
+      </div>
+    </div>
+    <!--free-->
+    <div  class="card text-center align-items-center  silver py-5" 
+    [ngClass]="{'notactive': Subscription.memberShipId != 2,'active':Subscription.memberShipId == 2}" style="width: 18rem; ">
+      <img src="assets/img/silver-membership-card.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title mb-5 mt-3">Silver Membership</h5>
+        <!-- <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p> -->
+        <p class="card-text"><span class=" display-3">50</span> $</p>
+        <a  class="btn btn-sm" (click)="AddNewSubscription(2)"
+        [ngClass]="{'d-block active-btn ': Subscription.memberShipId != 2,'d-none':Subscription.memberShipId == 2}">Get Now</a>
+      </div>
+    </div>
+
+
+    <!--gold-->
+    <div class="card text-center align-items-center gold py-5 " style="width: 18rem; "
+    [ngClass]="{'notactive': Subscription.memberShipId != 3,'active':Subscription.memberShipId == 3}">
+      <img src="assets/img/gold-membership-card-100.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title mb-5 mt-3">Gold Membership</h5>
+        <!-- <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p> -->
+        <p class="card-text"><span class=" display-3">70</span> $</p>
+        <a class="btn btn-sm " (click)="AddNewSubscription(3)"  
+        [ngClass]="{'d-block active-btn ': Subscription.memberShipId != 3,'d-none':Subscription.memberShipId == 3}">Get Now</a>
+     
+      </div>
+    </div>
+  </div>
+
+
+</div>

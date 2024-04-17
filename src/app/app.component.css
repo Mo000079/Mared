@@ -1,0 +1,8 @@
+
+app-loader{
+    background: var(--Third-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}

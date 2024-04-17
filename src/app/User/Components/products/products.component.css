@@ -1,0 +1,481 @@
+.products {
+  background-color: var(--background-color);
+
+}
+
+
+.container {
+  width: 90%;
+  margin: auto;
+  /* background-color: #1A936F; */
+}
+
+input[type="range"] {
+  accent-color: var(--sec-color);
+  /* background: rgba(255, 255, 255, 0.6); */
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 1rem;
+
+  position: relative;
+}
+
+.products .items {
+  width: 74%;
+  /* background-color: #FFBB38; */
+}
+
+
+
+.ads>.pe-3 {
+  position: relative;
+
+}
+
+.shop-now-btn {
+  background-color: var(--sec-color);
+  border-radius: 7px;
+}
+
+.shop-now-btn:hover {
+  opacity: .9;
+}
+
+.ads-content h3 {
+  color: var(--Third-color);
+}
+
+.ads-content {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+}
+
+.range::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: -70px;
+  left: 0;
+  background-color: var(--line-bg);
+}
+
+.items .top-part {
+  padding: 1.5rem;
+  background-color: var(--bg2-color);
+  margin-bottom: 2.5rem;
+}
+
+.sortBy-options {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line-bg);
+}
+
+.item {
+  margin-bottom: 2rem;
+  padding-bottom: .8rem !important;
+  width: 32%;
+  background-color: var(--bg2-color);
+}
+
+.item-img {
+  width: 100%;
+}
+
+.item-img img {
+  width: 100%;
+  /* height: 300px; */
+}
+
+.carousel-item {
+  width: 100%;
+  height: 450px;
+  /* background-size: 100% 100%; */
+  background-size: cover;
+}
+
+
+
+input[type="checkbox"] {
+  margin-left: 20px;
+  padding-bottom: 20px;
+}
+
+.lyr {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 450px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.filter-icon i {
+  color: var(--sec-color);
+  cursor: pointer;
+}
+
+.collapse-filter {
+  display: none;
+  position: absolute;
+  top: 130px;
+  right: 23px;
+  z-index: 2;
+  width: 95%;
+  height: calc(100vh - 200px);
+  /* transition: all .5s ease-in-out; */
+}
+
+.collapse-filter .products-filter {
+  background-color: var(--bg-color);
+}
+
+.rate {
+  float: left;
+  height: 20px;
+}
+
+.rate:not(:checked)>input {
+  position: absolute;
+  top: -9999px;
+}
+
+.rate:not(:checked)>label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 26px;
+  color: #ccc;
+}
+
+.rate:not(:checked)>label:before {
+  content: '★ ';
+}
+
+.rate>input:checked~label {
+  color: #ffc700;
+}
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
+  color: #deb217;
+}
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
+  color: #c59b08;
+}
+
+.curren-price {
+  color: var(--Third-color);
+}
+
+.add-to-cart-btn {
+  background-color: var(--Third-color);
+
+}
+.products .filter {
+  width: 23%;
+}
+
+.products-filter {
+  background-color: var(--bg2-color);
+  /* 40px 30px */
+  padding: 2.5rem 1.875rem;
+}
+
+.products-filter h5:first-child {
+  /* 30px */
+  padding-bottom: 1.875rem;
+}
+
+.products-filter h5:not(:first-child) {
+  padding-top: 1.25rem;
+  padding-bottom: 1rem;
+}
+
+.products .brand {
+  margin-top: 1.8rem;
+}
+
+.filter-item {
+  padding-bottom: .8rem;
+
+
+}
+
+.filter-item.rating {
+  color: #ffc700;
+  font-size: 1.4rem;
+}
+
+.filter-items::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: -5%;
+  left: 0;
+  background-color: var(--line-bg);
+  /* margin-bottom: 2.5rem; */
+}
+
+.rating span {
+  color: gray;
+}
+
+.range::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: -70px;
+  left: 0;
+  background-color: var(--line-bg);
+}
+
+
+
+.container {
+  width: 90%;
+  margin: auto;
+  /* background-color: #1A936F; */
+}
+
+input[type="range"] {
+  accent-color: var(--sec-color);
+  /* background: rgba(255, 255, 255, 0.6); */
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 1rem;
+
+  position: relative;
+}
+
+.products .items {
+  width: 74%;
+  /* background-color: #FFBB38; */
+}
+
+
+
+.ads>.pe-3 {
+  position: relative;
+
+}
+
+.shop-now-btn {
+  background-color: var(--sec-color);
+  border-radius: 7px;
+}
+
+.shop-now-btn:hover {
+  opacity: .9;
+}
+
+.ads-content h3 {
+  color: var(--Third-color);
+}
+
+.ads-content {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+}
+
+.range::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: -70px;
+  left: 0;
+  background-color: var(--line-bg);
+}
+
+.items .top-part {
+  padding: 1.5rem;
+  background-color: var(--bg2-color);
+  margin-bottom: 2.5rem;
+}
+
+.sortBy-options {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line-bg);
+}
+
+.item {
+  margin-bottom: 2rem;
+  padding-bottom: .8rem !important;
+  width: 32%;
+  background-color: var(--bg2-color);
+}
+
+.item-img {
+  width: 100%;
+}
+
+.item-img img {
+  width: 100%;
+  /* height: 300px; */
+}
+
+.carousel-item {
+  width: 100%;
+  height: 450px;
+  /* background-size: 100% 100%; */
+  background-size: cover;
+}
+
+
+
+input[type="checkbox"] {
+  margin-left: 20px;
+  padding-bottom: 20px;
+}
+
+.lyr {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 450px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.filter-icon i {
+  color: var(--sec-color);
+  cursor: pointer;
+}
+
+.collapse-filter {
+  display: none;
+  position: absolute;
+  top: 130px;
+  right: 23px;
+  z-index: 2;
+  width: 95%;
+  height: calc(100vh - 200px);
+  /* transition: all .5s ease-in-out; */
+}
+
+.collapse-filter .products-filter {
+  background-color: var(--bg-color);
+}
+
+.rate {
+  float: left;
+  height: 20px;
+}
+
+.rate:not(:checked)>input {
+  position: absolute;
+  top: -9999px;
+}
+
+.rate:not(:checked)>label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 26px;
+  color: #ccc;
+}
+
+.rate:not(:checked)>label:before {
+  content: '★ ';
+}
+
+.rate>input:checked~label {
+  color: #ffc700;
+}
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
+  color: #deb217;
+}
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
+  color: #c59b08;
+}
+
+.curren-price {
+  color: var(--Third-color);
+}
+
+.add-to-cart-btn {
+  background-color: var(--Third-color);
+
+}
+
+.apply-btn {
+  background-color: var(--sec-color);
+  transition: all .1s ease-in;
+}
+
+.apply-btn:hover {
+  opacity: .9;
+}
+
+.rate {
+  position: relative;
+  font-size: 1.4rem;
+  /* float: left;
+  height: 20px; */
+}
+
+/* .rate>input {
+  position: absolute;
+  top: -9999px;
+} */
+
+/* .rate>label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  /* cursor: pointer; */
+/* font-size: 26px; */
+/* color: #ccc; */
+/* } */
+
+input {
+  /* content: '★';
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0; */
+  color: #ffc700;
+
+}
+::ng-deep .ngx-pagination{
+  display: flex;
+  justify-content: center;
+
+}
+::ng-deep .ngx-pagination li.current{
+  background-color: var(--Third-color);
+}
+.fav-btn
+{
+  all: unset;
+  right: 0px;
+  cursor: pointer;
+  
+}

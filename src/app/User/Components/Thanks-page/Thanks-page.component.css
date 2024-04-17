@@ -1,0 +1,9 @@
+.btn
+{
+    background-color: var(--Third-color);
+    color: white;
+}
+.bi-check-circle-fill
+{
+    color: var(--Third-color);
+}

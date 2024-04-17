@@ -1,0 +1,108 @@
+navbar
+{
+    padding: 30px 0 !important;
+    font-size: 0.8rem;
+}
+.navbar-brand
+{
+    color: var(--sec-color);
+}
+.user
+{
+    all: unset;
+}
+.navbar .dropdown-menu
+{
+    padding-right: -10px;
+    font-size: 16px;
+}
+
+.navbar-brand:hover
+{
+    color: var(--Third-color);
+}
+nav [type="search"]
+{
+    border-radius: 0px;
+}
+nav select
+{
+    border-color: #ced4da;
+    color: #212529;
+    padding: 0.375rem 0.75rem;
+    margin-left: -10px;
+
+}
+nav [ type="submit"]
+{
+    border-radius: 0px;
+    color: white;
+    background-color: var(--Third-color);
+    border-color: var(--Third-color);
+    margin-left: 1px;
+}
+nav [ type="submit"]:hover
+{
+    background-color: var(--Third-color);
+}
+nav .d-flex
+{
+    width: 10%;
+}
+.login-reg-btn
+{
+    color: var(--Third-color);
+}
+.CartItemCount ,.WishlistCount
+{
+    position: absolute !important;
+    top:-10px;
+    right: 0;
+    font-size: 9px !important;
+     background-color: var(--sec-color);
+
+    padding: 1px 3px ;
+    font-size: 11px;
+}
+/*********************nav 2**********************************/
+.menu
+{
+    background-color: var(--sec-color) !important;
+    color: white;
+}
+.menu .navbar-nav
+{
+    margin-left: 100px;
+    gap: 20px;
+}
+.menu .form-select option:hover
+{
+    background-color: var(--sec-color) !important;
+
+}
+.menu .nav-item a
+{
+    color: var(--primary-color);
+}
+.menu .form-select
+{
+   width: 20vw !important;
+}
+.menu .btn
+{
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.9rem;
+}
+.active-link
+{
+    border: 0px !important;
+    color: var(--Third-color) !important;
+}
+.btn-sec
+{
+    background-color: var(--sec-color);
+}
+.fa-user{
+  cursor: pointer;
+}

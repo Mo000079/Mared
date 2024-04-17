@@ -1,0 +1,52 @@
+<div>
+  <h3 class="ms-5 pb-3">Your Products</h3>
+  <select class="ms-5" (change)="filter($event)">
+<option selected>Filter By Product Name</option>
+    <option *ngFor="let product of products | paginate: { itemsPerPage: pageSize, currentPage: pageIndex ,totalItems:count }" #val value="{{product.id}}">
+      {{product.name}}
+    </option>
+
+  </select>
+  <!-- <button class="btn btn-primary btn-sm" role="button">Applay</button> -->
+  <!-- <table>
+    <thead class="bg-white text-secondary">
+      <tr>
+        <th>Your Products</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prd of products">
+        <td >{{prd.name}}</td>
+      </tr>
+    </tbody>
+  </table> -->
+
+<section class="more-info mt-5">
+  <div class="container d-flex list-unstyled h6">
+      <p>Your Reviews</p>
+  </div>
+
+<div class="container bg-white p-5 mt-5">
+  <div class="review" *ngFor="let rev of Reviews">
+    <div class="d-flex justify-content-between">
+      <div>
+        <img src="./../../../assets/img/OIP.jpg" width="10%" alt="">
+        <span class="ms-2">{{rev.userName}}</span>
+      </div>
+      <div class="rate">
+        <span><i class="fa-solid fa-star"></i></span>
+            <span> {{rev.value}} </span>
+      </div>
+    </div>
+    <div class="ps-5 ms-1">Product Name: {{rev.productName}}</div>
+    <p class="text-secondary ps-5 ms-1">{{rev.message}}</p>
+
+  </div>
+  <div *ngIf="Reviews.length > 0">
+<pagination-controls class="my-pagination rounded"(pageChange)="ChangePage($event)"></pagination-controls>
+  </div>
+
+<app-V-Empty [visible]="Reviews.length <= 0 || Reviews == null" [notFoundText]="'No Reviews Yet'"></app-V-Empty>
+</div>
+</section>
+</div>
